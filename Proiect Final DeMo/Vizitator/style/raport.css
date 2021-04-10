@@ -1,0 +1,94 @@
+.pagina{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.head{
+    width: 40%;
+    /* border: 1px solid rgba(0, 0, 0, 0.2); */
+    font-size: 3em;
+    font-family: sans-serif;
+    margin-top: 2em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.autori{
+    width: 40%;
+    /* border: 1px solid black; */
+    font-family: sans-serif;
+    font-size: 1.25em;
+    display: flex;
+    color: black;
+    text-decoration: none;
+}
+
+.autori .space{
+    /* border: 1px solid black; */
+    width: 50%;
+}
+
+.autori a{
+    color: black;
+    text-decoration: none;
+}
+
+.autori ul:hover{
+    background-color: darkgray;
+}
+
+.autori h3{
+    margin: unset;
+}
+
+.sectiune h1{
+    font-family:Arial, Helvetica, sans-serif;
+    margin-top: 1em;
+    margin-bottom: 0.25em;
+}
+
+h2{
+    font-family: sans-serif;
+}
+
+.sectiune{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+    width: 40%;
+    /* margin: 5em 0; */
+    padding: 0em 1.5em;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.sectiune .titlu{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.sectiune .subpunct{
+    margin-top: 1.5em;
+
+}
+
+.subpunct p{
+    font-size: 1.2em;
+    font-family: sans-serif;}
+
+@media screen and (max-width: 800px){
+    .sectiune{
+        width: 90%;
+    }
+
+    .head{
+        width: 90%;
+    }
+
+    .autori{
+        width: 90%;
+    }
+
+    .autori .space{
+        display: none;
+    }
+}

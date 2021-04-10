@@ -1,0 +1,23 @@
+p{
+    position:relative;
+    border:2px solid gray;
+    padding:1em 2em;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+span{
+  display: none;
+    font-weight: normal;
+    position: absolute;
+    border:2px solid black;
+    background-color: yellow;
+    left:100%;
+    bottom: 100%;
+    width: 4em;
+    
+}
+p:hover span{
+    display: block;   
+}
