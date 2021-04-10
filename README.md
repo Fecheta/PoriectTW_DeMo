@@ -1,4 +1,4 @@
-# PoriectTW_DeMo
+# ProiectTW_DeMo
 
 Echipa:
   Timon Roxana-Mihaela; 
