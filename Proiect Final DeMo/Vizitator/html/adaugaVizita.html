@@ -18,7 +18,7 @@
             <a id="istoric" href="./istoric.html">Istoric vizite</a>
             <a id="add" href="./adaugaVizita.html" class="activate">Adauga vizita</a>
             <a id="verifica" href="./cautaDetinut.html">Cauta Detinut</a>
-            <a id="about" href="../html/raport.html">Despre</a>
+            <a id="about" href="../../Raport/raport.html">Despre</a>
             <div id="userManagePhone" class="extraResponsive">
                 <a id="logoutP" href="../../StartPage/html/p1.html">Schimba cont</a>
                 <a id="modifyP" href="#change_account_data">Modifica cont</a>
@@ -61,14 +61,24 @@
             <input id="hour" type="time" required>
         </div>
         <div class="line">
-            <label for="rude">Grad de rudenie</label>
+            <label for="rude">Relatia cu detinutul</label>
             <select name="grad" id="rude" required>
                 <option value="-1">- - select - -</option>
-                <option value="0">Parinte</option>
-                <option value="1">Frate/Sora</option>
-                <option value="2">Bunic</option>
-                <option value="2.1">Verisor</option>
-                <option value="3">Niciunul</option>
+                <option value="0">Ruda</option>
+                <option value="1">Tutore legal</option>
+                <option value="2">Avocat</option>
+                <option value="2.1">Prieten</option>
+                <option value="2.1">Altul</option>
+            </select>
+        </div>
+        <div class="line">
+            <label for="rude">Scopul Vizitei</label>
+            <select name="grad" id="rude" required>
+                <option value="-1">- - select - -</option>
+                <option value="0">Vizita Amicala</option>
+                <option value="1">Chestiuni Judecatresti</option>
+                <option value="2">Probleme Personale</option>
+                <option value="2.1">Altul</option>
             </select>
         </div>
         <button class="btn">Inregistrează!</button>

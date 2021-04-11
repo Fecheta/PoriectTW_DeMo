@@ -10,18 +10,23 @@ body {
     align-items: center;
 }
 
-.tabel {
-    position: absolute;
+table{
+    /* position: absolute;
     left: 50%;
-    top: 73%;
+    top: 80%;
     transform: translate(-50%, -50%);
     border: 5px solid #FFFF00;
-    padding: 10px;
+    padding: 10px; */
+    margin-top: 2em;
+    margin-bottom: 10em;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
 td {
     text-align: center;
     font-size: 20px;
+    padding: 0.5em 0;
 }
 
 th {
@@ -35,11 +40,15 @@ tr:nth-child(even) {
 th {
     background-color: #D2691E;
     color: white;
+    padding: 0.5em 0;
 }
 
 div.tabel {
-    width: 780px;
-    margin: auto;
-    border: 6px solid #000000;
-    padding: 20px;
+    width: 50%;
+}
+
+@media screen and (max-width: 800px){
+    div.table{
+        width: 80%;
+    }
 }

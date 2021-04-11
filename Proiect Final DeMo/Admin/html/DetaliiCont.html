@@ -10,20 +10,38 @@
     <link rel="stylesheet" href="../css/DetaliiCont.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/Principal.css">
+    <script type="text/javascript" src="../javaScript/topnav.js"></script>
 </head>
 
 <body class="st">
+
     <div class="fullTopnav">
         <div id="myTopnav" class="topnav">
-            <a id="home" href="./Principal.html" class="activate">Home</a>
-            <a id="istoric" href="./IstoricVizite.html">Istoric Vizite</a>
-            <a id="add" href="./Programari.html">Programari</a>
-            <a id="verifica" href="./VizualizareDetinuti.html">Vizualizare Detinuti</a>
-            <a id="about" href="./DetaliiCont.html">Detalii Cont</a>
-            <a id="user" href="#account">Nume User</a>
-
+            <a id="home" href="../html/Principal.html">Home</a>
+            <a id="istoric" href="../html/IstoricVizite.html">Istoric vizite</a>
+            <a id="add" href="../html/Programari.html">Programari</a>
+            <a id="verifica" href="../html/VizualizareDetinuti.html">Vizualizare Detinuti</a>
+            <a id="about" href="../html/DetaliiCont.html" class="activate">Detalii cont</a>
+            <div id="userManagePhone" class="extraResponsive">
+                <a id="logoutP" href="../../StartPage/html/p1.html">Schimba cont</a>
+                <a id="modifyP" href="#change_account_data">Modifica cont</a>
+                <a id="removeP" href="#del_account">Sterge Cont</a>
+            </div>
         </div>
-        <div class="detalii">
+        <div class="account">
+            <a href="javascript:void(0);" class="icon" onclick="Func()">
+                <i class="fa fa-bars"></i>
+            </a>
+            <a id="user" href="#account" class="logged" onclick="AccShow(this.id)">Nume User</a>
+            <div id="userManage" class="extra">
+                <a id="logout" href="../../StartPage/html/p1.html">Schimba cont</a>
+                <a id="modify" href="#change_account_data">Modifica cont</a>
+                <a id="remove" href="#del_account">Sterge Cont</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="detalii">
             <p class="col1">Username: </p>
             <p class="col2">admin1</p>
             <p class="col3">Nume si prenume: </p>
@@ -38,7 +56,7 @@
             <p class="col12">04.08.2020</p>
             <p class="col13">E-mail: </p>
             <p class="col14">admin1@penitenciar.ro</p>
-        </div>
+    </div>
 
 
 
