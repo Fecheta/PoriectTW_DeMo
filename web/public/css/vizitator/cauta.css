@@ -1,0 +1,110 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 87, 7, 0.5);
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    /* border: 1px solid black; */
+    background-color: white;
+    padding: 1em 1em;
+    margin: 2em 0;
+    text-align: center;
+}
+
+.search a{
+    color: black;
+    text-decoration: none;
+}
+
+.line{
+    display: flex;
+    /* border: 1px solid black; */
+    align-items: center;
+    width: 90%;
+    background-color:rgb(233, 233, 233);
+    margin: 0.5em 0.5em;
+}
+
+.line span{
+    display: inline-block;
+    font-size: 1.2em;
+    margin: 2em 1em;
+    width: 30%;
+    /* border: 1px solid black; */
+    /* background-color: wheat; */
+}
+
+form span:not(.titlu)::after{
+    color: crimson;
+    content: "*";
+    font-weight: bold;
+}
+
+.search .titlu{
+    font-size: 2em;
+}
+
+.line input{
+    /* float: right; */
+    width: 55%;
+    height: 40%;
+    padding: 1em 1em;
+    /* margin: 1em 1em; */
+    font-size: 1em;
+    /* border: 1px solid black; */
+}
+
+.btn{
+    background-color:deepskyblue;
+    cursor: pointer;
+    width: 90%;
+    height: 2.5em;
+    border: unset;
+    padding: none;
+    border-radius: 1em;
+}
+
+@media screen and (max-width: 1000px){
+    .search{
+        width: 85%;
+    }
+
+    .search .titlu{
+        font-size: 1.5em;
+    }
+
+    .line{
+        display: block;
+        width: 99%;
+        /* border: 1px solid black; */
+        margin: 1em 0;
+        font-size: 1em;
+    }
+
+    .line span{
+        float: none;
+        margin: auto;
+        width: 70%;
+        display: inline-block;
+        margin-top: 0.5em;
+    }
+
+    .line input{
+        float: unset;
+        margin: auto;
+        padding: 0.5em 0.5em;
+        width: 80%;
+        margin-bottom: 1em;
+    }
+
+    .btn{
+        width: 99%;
+    }
+}
