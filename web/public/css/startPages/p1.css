@@ -1,0 +1,192 @@
+h1 {
+    color: black;
+    font-size:20px;
+    
+
+    animation-name: example;
+    animation-duration: 4s;
+  }
+  h2 {
+      color:black;
+      font-size:20px;
+     } 
+  p {
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-family: sans-serif;
+}
+
+
+/*.input {
+
+    font-size: 120%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: ui-rounded ;
+
+
+  }*/
+
+footer {
+    color: rgb(3, 44, 57);
+    animation-name: example;
+    animation-duration: 4s;
+    border: 1px solid white;
+    padding: 1em 1em;
+}
+
+header {
+    text-align: center;
+}
+
+div {
+    align-items: center;
+    justify-content: space-between;
+    font-size: 100%;
+    text-align: center;
+    width: 50%;
+    margin-left: 50px;
+}
+
+main {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body {
+    background: lightskyblue;
+    border: 0px !important;
+    border-collapse: collapse !important;
+    border: none !important;
+    outline: none !important;
+    width: 100%;
+    /*background: lightskyblue;*/
+    background-image: url(../../images/p5.svg);
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-size: cover;
+    background-size: 100% 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.button {
+    font-size: 120%;
+    background-color: white;
+    color: black;
+    width: 30%;
+    border: 2px solid lightskyblue;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    /* margin-left: 35%; */
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+a,
+li {
+    text-decoration: none !important;
+}
+
+.item {
+    display: block;
+    width: 100%;
+    border: 1px black;
+    background-color: rgb(76, 127, 175);
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.item:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.a {
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+@keyframes example {
+    0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+    25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+    }
+    50% {
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+    }
+    75% {
+        background-color: green;
+        left: 0px;
+        top: 200px;
+    }
+    100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    padding: 8px;
+    background-color: white;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden
+}
+
+svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%
+}
+
+@media screen and (max-width: 600px) {
+    .button {
+        width: 80%;
+        /* margin-left: 20px; */
+    }
+    main {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
