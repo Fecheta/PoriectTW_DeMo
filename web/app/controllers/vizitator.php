@@ -16,6 +16,7 @@ class Vizitator extends Controller{
         }
         else{
             $view = $this->view("startPages/LoginPage", $user);
+            header("Location: /startPages/LoginPage");
         }
     }
 
