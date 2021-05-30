@@ -30,6 +30,9 @@ body{
 .bar .back{
     text-decoration: none;
     color:black;
+    padding: 0;
+    border: none;
+    background: none;
 }
 
 .bar .back:hover{
