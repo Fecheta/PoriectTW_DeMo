@@ -1,0 +1,145 @@
+body{
+    /* width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    overflow: hidden; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: cornflowerblue;
+}
+
+.bar .back {
+    background-color: rgb(150, 130, 255);
+    padding: 1em 1em;
+    height: 100%;
+    width: 10%;
+    /* border: 1px solid black; */
+    z-index: 1;
+}
+
+.bar .back{
+    text-decoration: none;
+    color:black;
+}
+
+.bar .back:hover{
+    background-color: darkgrey;
+    color: black;
+}
+
+.bar .rezultatTitlu{
+    color: black;
+    font-size:  1.25em;
+    /* border: 1px solid black; */
+    position: absolute;
+    width: 98vw;
+}
+
+.bar .rezultatTitlu p{
+    font-size: 1.25em;
+    padding: 0 1em;
+    margin: unset;
+}
+
+.profil{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 40%;
+    display: inline-flex;
+    margin: 1em 0;
+    background-color:  rgba(245, 222, 179, 1);
+}
+
+.profil .numePoza{
+    width: 50%;
+    text-align: center;
+    border: 2px dashed rgb(189, 171, 137)
+}
+
+.profil .numePoza .forImg{
+    width: 100%;
+    border-radius: 5px;
+    /* border: 1px solid black; */
+}
+
+.profil .numePoza .info{
+    /* border: 1px solid black; */
+    margin: unset;
+}
+
+.profil .numePoza .info h4{
+    font-weight: bold;
+    margin: 1em 0.1em;
+}
+
+.profil .pData{
+    /* border: 1px solid black; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25em;
+}
+
+.rawData{
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 1em;
+    background-color: rgba(245, 222, 179, 1);
+}
+
+.rawData p{
+    margin: unset;
+}
+
+.col1Data{
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 50%;
+}
+
+.col2Data{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2em;
+}
+
+.pData div:nth-child(2n-1){
+    background-color: antiquewhite;
+}
+
+@media screen and (max-width: 800px){
+    .profil{
+        width: 95%;
+        /* overflow: hidden; */
+    }
+
+    /* .profil .forImg .info{
+        height: 20%;
+    } */
+
+    .profil .pData{
+        font-size: 1em;
+    }
+
+    .bar .back{
+        width: 35%;
+    }
+
+    .bar .rezultatTitlu{
+        position: relative;
+        font-size: 1em;
+    }
+}
