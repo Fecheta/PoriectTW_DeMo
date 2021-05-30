@@ -11,7 +11,8 @@
 </head>
 <body class="pagina">
     <div class="bar">
-        <a href="../StartPage/html/p1.html" class="back"> &lt; BACK </a>
+        <button class="back" onclick="history.go(-1);"> &lt; BACK </button>
+        <!-- <a href="../StartPage/html/p1.html" class="back"> &lt; BACK </a> -->
         <div class="rezultatTitlu">
             <p>RAPORT</p>
         </div>
