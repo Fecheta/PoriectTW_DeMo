@@ -1,5 +1,7 @@
 <?php
 
+include_once __DIR__ . "/../models/auth.util.php";
+
 class Vizitator extends Controller{
 
     public function index1($data = []){
@@ -7,8 +9,14 @@ class Vizitator extends Controller{
     }
 
     public function index($data = []){
-        
-        $view = $this->view('vizitator/index',$data);
+        $user = getLoggedInUser();
+
+        if ($user) {
+            $view = $this->view('vizitator/index', $data);
+        }
+        else{
+            $view = $this->view("startPages/LoginPage", $user);
+        }
     }
 
     public function istoric($data = []){

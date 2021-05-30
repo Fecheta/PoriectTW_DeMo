@@ -19,9 +19,9 @@
 </header>
 
 <main class="b">
-    <form action="/vizitator/index" method="POST">
-        <input type="text" class="inp" placeholder="Username" required>
-        <input type="password" class="inp" placeholder="Password" required>
+    <form action="/auth/login" method="POST">
+        <input type="text" class="inp" placeholder="Username" name="username" required>
+        <input type="password" class="inp" placeholder="Password" name="password" required>
         <button class ="inp2" type="submit"> Login </button>
     </form>
 </main>

@@ -32,7 +32,7 @@
             </a>
             <a id="user" href="#account" class="logged" onclick="AccShow(this.id)">Nume User</a>
             <div id="userManage" class="extra">
-                <a id="logout" href="../../StartPage/html/LoginPage.html">Schimba cont</a>
+                <a id="logout" href="/auth/logout">Schimba cont</a>
                 <a id="modify" href="#change_account_data">Modifica cont</a>
                 <a id="remove" href="index/del_account">Sterge Cont</a>
             </div>

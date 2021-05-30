@@ -30,6 +30,17 @@
             return $result;
         }
 
+        public function getVizitatorAccount($username){
+            $stmt = $this->conn->prepare("SELECT * FROM cont_vizitator WHERE username = ?");
+            $stmt->bind_param("s", $username);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            $stmt->close();
+
+            return $result->fetch_assoc();
+        }
+
     }
 
 ?>
