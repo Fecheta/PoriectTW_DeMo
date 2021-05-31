@@ -14,8 +14,8 @@ class Admin extends Controller{
     }
     
 
-    public function DetaliiCont($data = []){
-        $view = $this->view('admin/DetaliiCont', $data);
+    public function AdaugaDetinut($data = []){
+        $view = $this->view('admin/AdaugaDetinut', $data);
     }
 
     public function Programari($data = []){
