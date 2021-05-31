@@ -47,7 +47,7 @@
         </div>
     </div>
 
-    <form method="POST" class="search" action="/admin/Vizita">
+    <form method="POST" class="search" action="/admin/vizita">
         <label class="titlu">CAUTA O VIZITA</label>
 
         <label class="line">
