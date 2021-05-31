@@ -20,8 +20,8 @@ body {
 }
 
 #form-message{
-    background-color: rgb(255, 116, 116);
-    color: rgb(100, 0, 0);
+    background-color: rgb(255, 117, 117);
+    color: rgb(71, 0, 0);
     border: 1px solid red;
     width: 100%;
     padding-left: 0.5em;
@@ -50,6 +50,25 @@ form {
     align-items: center;
     flex-direction: column;
     width: 100%;
+}
+
+form label{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.show, .hide{
+    position: absolute;
+    right: 0.20em;
+    top: 0.35em;
+}
+
+#show{
+    display: none;
 }
 
 div {

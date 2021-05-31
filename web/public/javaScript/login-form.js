@@ -34,7 +34,7 @@ form.submit.addEventListener('click', () => {
 
     console.log(requestData);
     request.open('post', '/auth/login');
-    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
+    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     request.send(requestData);
 });
 

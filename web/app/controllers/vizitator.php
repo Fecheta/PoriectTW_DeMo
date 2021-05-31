@@ -12,10 +12,10 @@ class Vizitator extends Controller{
         $user = getLoggedInUser();
 
         if ($user) {
-            $view = $this->view('vizitator/index', $data);
+            $view = $this->view('vizitator/index', array("user" => $user));
         }
         else{
-            $view = $this->view("startPages/LoginPage", $user);
+            $view = $this->view("startPages/LoginPage", $data);
             header("Location: /startPages/LoginPage");
         }
     }

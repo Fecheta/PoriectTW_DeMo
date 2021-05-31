@@ -30,7 +30,9 @@
             <a href="javascript:void(0);" class="icon" onclick="Func()">
                 <i class="fa fa-bars"></i>
             </a>
-            <a id="user" href="#account" class="logged" onclick="AccShow(this.id)">Nume User</a>
+            <?php
+                echo "<a id=\"user\" href=\"#account\" class=\"logged\" onclick=\"AccShow(this.id)\">" . $data["user"]->name . "</a>";
+            ?>
             <div id="userManage" class="extra">
                 <a id="logout" href="/auth/logout">Schimba cont</a>
                 <a id="modify" href="#change_account_data">Modifica cont</a>
