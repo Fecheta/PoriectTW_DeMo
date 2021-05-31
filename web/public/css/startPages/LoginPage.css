@@ -13,10 +13,28 @@ body {
     margin:0;
 
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
     justify-content: center;
     align-items: center;
    
+}
+
+#form-message{
+    background-color: rgb(255, 116, 116);
+    color: rgb(100, 0, 0);
+    border: 1px solid red;
+    width: 100%;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    list-style-type: none;
+    margin: unset;
+    font-size: 0.8em;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
 }
 
 header{
@@ -25,10 +43,13 @@ header{
 
 
 form { 
-    display: inline-block;
-    left: auto;
+    display: flex;
+    /* left: auto;
     right : auto;
-    text-align: center;
+    text-align: center; */
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
 }
 
 div {
@@ -38,14 +59,14 @@ div {
 }
 
 main{
-    width: 30%;
+    width: 20%;
     /* border: 1px solid white; */
     padding-top: 2.5em;
 }
 
-main form{
+/* main form{
     width: 80%;
-}
+} */
 
 .inp2{
     width: 4em;
@@ -54,6 +75,9 @@ main form{
     display:inline-block;
     justify-content: center;
     align-items: center;
+    /* border: 1px solid gray; */
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
 }
 
 ::placeholder {
@@ -66,12 +90,18 @@ main form{
     color:black;
     width: 100%;
     padding: 0.5em 0.5em;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
   }
 
   .b {
       left:auto;
       right:auto;
       align-items:center;
+
+      display: flex;
+      flex-direction: column;
+
       top: 50%;
       top: 50%;
       font-size:30px;
