@@ -21,7 +21,7 @@
             <a id="istoric" href="/admin/IstoricVizite" class="activate">Istoric vizite</a>
             <a id="add" href="/admin/Programari">Programari</a>
             <a id="verifica" href="/admin/VizualizareDetinuti">Vizualizare Detinuti</a>
-            <a id="about" href="/admin/DetaliiCont">Detalii cont</a>
+            <a id="about" href="/admin/AdaugaDetinutt">AdaugaDetinut</a>
             <div id="userManagePhone" class="extraResponsive">
                 <a id="logoutP" href="../../StartPage/html/p1.html">Schimba cont</a>
                 <a id="modifyP" href="#change_account_data">Modifica cont</a>
