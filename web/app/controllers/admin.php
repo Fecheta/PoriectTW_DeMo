@@ -1,5 +1,5 @@
 <?php
-
+include_once __DIR__ . "/../models/auth.util.php";
 class Admin extends Controller{
 
    
@@ -12,9 +12,7 @@ class Admin extends Controller{
     public function IstoricVizite($data = []){
         $view = $this->view('admin/IstoricVizite', $data);
     }
-    public function ProfilDetinu($data = []){
-        $view = $this->view('admin/ProfilDetinut', $data);
-    }
+    
 
     public function DetaliiCont($data = []){
         $view = $this->view('admin/DetaliiCont', $data);
@@ -26,6 +24,16 @@ class Admin extends Controller{
 
     public function VizualizareDetinuti($data = []){
         $view = $this->view('admin/VizualizareDetinuti', $data);
+    }
+    public function profil($data = []){
+        require_once __DIR__ . "/../models/database.util.php";
+        $db = new Database();
+        $cod = $_POST["cod"];
+        // echo $_POST["cod"];
+        // return;
+        $res = $db->testFindById($cod);
+
+        $view = $this->view('admin/profil', $res);
     }
 }
 
