@@ -54,9 +54,10 @@
             <span> Cod Unic Vizita </span>
             <input type="text" placeholder="cod">
         </label>
+        <button class="btn" type="submit"> Cauta! </button>
+    </form>
     
-    
-
+    <h3>Apasă pe caută! pentru a ajunge la o pagină cu un model de rezultat</h3>
 
 
 </body>
