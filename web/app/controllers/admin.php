@@ -35,6 +35,16 @@ class Admin extends Controller{
 
         $view = $this->view('admin/profil', $res);
     }
+    public function vizita($data = []){
+        require_once __DIR__ . "/../models/database.util.php";
+        $db = new Database();
+        $cod = $_POST["cod"];
+        // echo $_POST["cod"];
+        // return;
+        $res = $db->testFindById($cod);
+
+        $view = $this->view('admin/vizita', $res);
+    }
 }
 
 ?>
