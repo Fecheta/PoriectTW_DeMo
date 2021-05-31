@@ -24,9 +24,9 @@
         <li>Generic error #2</li>
     </ul>
 
-    <form action="/auth/login" method="POST" id="myForm">
-        <input type="text" class="inp" placeholder="Username" name="username" id="username" required>
-        <input type="password" class="inp" placeholder="Password" name="password" id="password" required>
+    <form method="POST" id="myForm">
+        <input type="text" class="inp" placeholder="Username" id="username" autocomplete="off" required>
+        <input type="password" class="inp" placeholder="Password" id="password" required>
         <button class ="inp2" type="submit" id="btn"> Login </button>
     </form>
 
