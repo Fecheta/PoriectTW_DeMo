@@ -41,6 +41,68 @@
             return $result->fetch_assoc();
         }
 
+        public function selectByNameOrCod($name_cod){
+
+            if(!is_numeric($name_cod)){
+                $split = explode(" ", $name_cod);
+                if (count($split) >= 2) {
+                    $stmt = $this->conn->prepare("SELECT * FROM detinuti WHERE nume = ? AND prenume = ? OR nume = ? AND prenume = ?");
+                    $stmt->bind_param("ssss", $split[0], $split[1], $split[1], $split[0]);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    $stmt->close();
+                    return $result;
+                } else {
+                    $stmt = $this->conn->prepare("SELECT * FROM detinuti WHERE nume = ? OR prenume = ?");
+                    $stmt->bind_param("ss", $split[0], $split[0]);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    $stmt->close();
+                    return $result;
+                }
+            } else {
+                $stmt = $this->conn->prepare("SELECT * FROM detinuti WHERE id_detinut = ?");
+                $stmt->bind_param("i", $name_cod);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                $stmt->close();
+                return $result;
+            }
+
+            return null;
+        }
+
+        public function selectByNameOrCodUser($name_cod){
+
+            if(!is_numeric($name_cod)){
+                $split = explode(" ", $name_cod);
+                if (count($split) >= 2) {
+                    $stmt = $this->conn->prepare("SELECT * FROM user WHERE first_name = ? AND last_name = ? OR first_name = ? AND last_name = ?");
+                    $stmt->bind_param("ssss", $split[0], $split[1], $split[1], $split[0]);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    $stmt->close();
+                    return $result;
+                } else {
+                    $stmt = $this->conn->prepare("SELECT * FROM user WHERE first_name = ? OR last_name = ?");
+                    $stmt->bind_param("ss", $split[0], $split[0]);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    $stmt->close();
+                    return $result;
+                }
+            } else {
+                $stmt = $this->conn->prepare("SELECT * FROM user WHERE id_user = ?");
+                $stmt->bind_param("i", $name_cod);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                $stmt->close();
+                return $result;
+            }
+
+            return null;
+        }
+
     }
 
 ?>

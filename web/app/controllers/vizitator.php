@@ -1,6 +1,7 @@
 <?php
 
 include_once __DIR__ . "/../models/auth.util.php";
+require_once __DIR__ . "/../models/database.util.php";
 
 class Vizitator extends Controller{
 
@@ -29,7 +30,21 @@ class Vizitator extends Controller{
     }
 
     public function cauta($data = []){
-        $view = $this->view('vizitator/cauta', $data);
+        $user = getLoggedInUser();
+
+        if($user){
+            if(isset($_POST["name_cod"])){
+                $name_cod = $_POST["name_cod"];
+                $db = new Database();
+                $result = $db->selectByNameOrCod($name_cod);
+                $view = $this->view('vizitator/cauta', array("user"=>$user, "data"=>$result));
+            }
+
+            $view = $this->view('vizitator/cauta', array("user"=>$user));
+        }else{
+            $view = $this->view("startPages/LoginPage", $data);
+            header("Location: /startPages/LoginPage");
+        }
     }
 
     public function despre($data = []){
@@ -37,7 +52,6 @@ class Vizitator extends Controller{
     }
 
     public function profil($data = []){
-        require_once __DIR__ . "/../models/database.util.php";
         $db = new Database();
         $cod = $_POST["cod"];
         // echo $_POST["cod"];

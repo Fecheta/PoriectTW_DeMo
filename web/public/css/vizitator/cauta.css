@@ -71,6 +71,28 @@ form span:not(.titlu)::after{
     border-radius: 1em;
 }
 
+.find{
+    /* border: 1px solid black; */
+    width: 40%;
+    padding-top: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.findBy{
+    width: 100%;
+    padding: 0.5em 0.5em;
+}
+
+.findBtn{
+    /* font-size: 1em; */
+    padding: 0.5em 0.5em;
+    width: 10%;
+    display: inline-block;
+}
+
 @media screen and (max-width: 1000px){
     .search{
         width: 85%;
