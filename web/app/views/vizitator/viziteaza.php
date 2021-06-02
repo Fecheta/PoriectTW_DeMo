@@ -51,7 +51,7 @@
             ÎNREGISTREZĂ O VIZITĂ &nbsp;&nbsp;&nbsp; <i class="fa fa-plus"></i>
         </button>
 
-        <label for="fname" class="titlu" id="titlu">ÎNREGISTREZĂ O VIZITĂ</label>
+        <label class="titlu" id="titlu">ÎNREGISTREZĂ O VIZITĂ</label>
 
         <div class="line" id="find-detinut">
             <label>Pe cine vrei sa vizitezi?</label>
@@ -116,7 +116,7 @@
 
         <div class="line" id="visit-relation">
             <label>Relatia cu detinutul</label>
-            <select name="grad" id="rude" required>
+            <select id="rude" required>
                 <option value=""> - - select - - </option>
                 <option value="Ruda">Ruda</option>
                 <option value="Tutore Legal">Tutore legal</option>
@@ -127,7 +127,7 @@
 
         <div class="line" id="visit-scope">
             <label>Scopul Vizitei</label>
-            <select name="grad" id="scop" required>
+            <select id="scop" required>
                 <option value=""> - - select - - </option>
                 <option value="Vizita Amicala">Vizita Amicala</option>
                 <option value="Chestiuni Judecatresti">Chestiuni Judecatresti</option>

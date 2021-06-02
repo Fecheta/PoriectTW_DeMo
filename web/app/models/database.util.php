@@ -103,6 +103,25 @@
             return null;
         }
 
+        public function registerVisit($idDetinut, $idUser1, $idUser2, $idUser3, $data, $ora, $relatia, $scop){
+            $idProgramare = rand(10000, 20000);
+            $stmt = $this->conn->prepare("INSERT INTO programari VALUES( ? , ? , ? , ? , ? , ? , ? , ? , ? )");
+            $stmt->bind_param("iiiiissss", $idProgramare, $idDetinut, $idUser1, $idUser2, $idUser3, $data, $ora, $relatia, $scop);
+
+            if(trim($idUser2) == ""){
+                $idUser2 = null;
+            }
+
+            if(trim($idUser3) == ""){
+                $idUser3 = null;
+            }
+
+            $stmt->execute();
+            $stmt->close();
+
+            return $idProgramare;
+        }
+
     }
 
 ?>

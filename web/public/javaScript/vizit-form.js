@@ -22,15 +22,15 @@ var to = toY + '-' + toM + '-' + toD;
 day.setAttribute("min", from);
 day.setAttribute("max", to);
 
-var idProgramare = null;
-var idDetinut = null;
-var idUser1 = null;
-var idUser2 = null;
-var idUser3 = null;
-var dataVizitei = null;
-var oraVizitei = null;
-var relatiaCuCondamnatul = null;
-var naturaVizitei = null;
+var idProgramare = "";
+var idDetinut = "";
+var idUser1 = "";
+var idUser2 = "";
+var idUser3 = "";
+var dataVizitei = "";
+var oraVizitei = "";
+var relatiaCuCondamnatul = "";
+var naturaVizitei = "";
 
 var registerForm = document.getElementById("register-visit-form");
 var startVisit = document.getElementById("start-visit");
@@ -84,6 +84,8 @@ startFindBtn.onclick = function () {
                 prisonerCard.photo.style.display = "none";
                 prisonerCard.infoPedeapsa.style.display = "none";
                 prisonerCard.infoNumeCod.textContent = "NU AM GASIT NICI UN PRIZONIER PENTRU DATELE INTRODUSE!"
+            
+                idDetinut = "";
             }
         }
     }
@@ -139,13 +141,13 @@ var valueScope = document.getElementById("scop");
 var submitBtn = document.getElementById("submitBtn");
 
 addUser.onclick = function () {
-    if (idUser1 == null) {
+    if (idUser1 == "") {
         vizitator1.mainUserFind.style.display = "flex";
         // vizitator1.mainUC.style.display="flex";
-    } else if (idUser2 == null) {
+    } else if (idUser2 == "") {
         vizitator2.mainUserFind.style.display = "flex";
         // vizitator2.mainUC.style.display="flex";
-    } else if (idUser3 == null) {
+    } else if (idUser3 == "") {
         vizitator3.mainUserFind.style.display = "flex";
         addUser.style.display = "none";
         // vizitator3.mainUC.style.display="flex";
@@ -180,7 +182,7 @@ vizitator1.btn.onclick = function () {
                 visitRelation.style.display = "block";
                 submitBtn.style.display = "block";
             } else {
-                idUser1 = null;
+                idUser1 = "";
 
                 vizitator1.mainUC.style.display = "flex";
                 vizitator1.photo.style.display = "none";
@@ -219,7 +221,7 @@ vizitator2.btn.onclick = function () {
                 vizitator2.info.textContent = responseObject.nume + ' ' + responseObject.prenume + ' ( #' + responseObject.cod + ' )';
                 addUser.style.display = "flex";
             } else {
-                idUser2 = null;
+                idUser2 = "";
 
                 vizitator2.mainUC.style.display = "flex";
                 vizitator2.photo.style.display = "none";
@@ -258,7 +260,7 @@ vizitator3.btn.onclick = function () {
                 vizitator3.info.textContent = responseObject.nume + ' ' + responseObject.prenume + ' ( #' + responseObject.cod + ' )';
                 addUser.style.display = "flex";
             } else {
-                idUser3 = null;
+                idUser3 = "";
 
                 vizitator3.mainUC.style.display = "flex";
                 vizitator3.photo.style.display = "none";
@@ -276,11 +278,71 @@ vizitator3.btn.onclick = function () {
     request.send(requestData);
 }
 
+var messageBox = document.getElementById("messageBox");
+
 submitBtn.onclick = function () {
     dataVizitei = valueDate.value;
     oraVizitei = valueHour.value;
     relatiaCuCondamnatul = valueRelation.value;
     naturaVizitei = valueScope.value;
+
+    const request = new XMLHttpRequest();
+
+    request.onload = () => {
+        console.log(request.responseText);
+        let responseObject = null;
+
+        try {
+            responseObject = JSON.parse(request.responseText);
+        } catch (e) {
+            console.error('could not parse JSON');
+        }
+
+        if (responseObject) {
+            messageBox.style.display = "flex";
+
+            while (messageBox.firstChild) {
+                messageBox.removeChild(messageBox.firstChild);
+            }
+
+            if (responseObject.ok) {
+                var label = document.createElement('label');
+                label.textContent = "Programare Inregistrata cu id-ul #" + responseObject.idProgramare;
+                messageBox.appendChild(label);
+
+                while(registerForm.firstChild){
+                    registerForm.removeChild(registerForm.firstChild);
+                }
+
+                var titlu = document.createElement('label');
+                titlu.setAttribute('class', 'titlu');
+                titlu.style.display = "block";
+                titlu.textContent = "Da click pe istoric vizite pentru a vedea vizita inregistrata";
+                registerForm.appendChild(titlu);
+            } else {
+                responseObject.messages.forEach((message) => {
+                    var label = document.createElement('label');
+                    label.textContent = message;
+                    messageBox.appendChild(label);
+                });
+            }
+        }
+
+    }
+
+    const requestData = `idDetinut=${idDetinut}
+                         &idUser1=${idUser1}
+                         &idUser2=${idUser2}
+                         &idUser3=${idUser3}
+                         &dataVizita=${dataVizitei}
+                         &oraVizita=${oraVizitei}
+                         &relatie=${relatiaCuCondamnatul}
+                         &scop=${naturaVizitei}`;
+
+    request.open('post', '/registerVisit/register');
+    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    request.send(requestData);
+
 
 
     console.log(idDetinut);
