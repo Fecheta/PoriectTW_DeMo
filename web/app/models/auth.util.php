@@ -12,7 +12,7 @@
 
         if ($user) {
             if ($username === $user["username"] && password_verify($password, $user["password"])) {
-                return new User($user["username"], $user["password"]);
+                return new User($user["username"], $user["password"], $user["id_user"]);
             }
         }
         
@@ -22,14 +22,15 @@
 
     function getLoggedInUser() {
         if(isset($_SESSION["username_vizitator"]) && isset($_SESSION["password_vizitator"])){
-            return getUser($_SESSION["username_vizitator"], $_SESSION["password_vizitator"]);
+            return getUser($_SESSION["username_vizitator"], $_SESSION["password_vizitator"], $_SESSION["id_vizitator"]);
         }
         return null;
     }
 
-    function login($username, $password){
+    function login($username, $password, $idUser){
         $_SESSION["username_vizitator"] = $username;
         $_SESSION["password_vizitator"] = $password;
+        $_SESSION["id_vizitator"] = $idUser;
     }
 
 ?>

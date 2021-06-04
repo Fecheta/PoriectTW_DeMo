@@ -44,7 +44,7 @@ class Auth extends Controller{
             $user = getUser($username, $password);
 
             if($user){
-                login($username, $password);
+                login($username, $password, $user->idUser);
                 $ok = true;
                 $messages[] = 'Successfull login!';
             } else {
@@ -68,6 +68,7 @@ class Auth extends Controller{
     public function logout(){
         $_SESSION["username_vizitator"] = null;
         $_SESSION["password_vizitator"] = null;
+        $_SESSION["id_vizitator"] = null;
         header("Location: /");
     }
 

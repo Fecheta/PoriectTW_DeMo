@@ -33,38 +33,112 @@ body{
 .raw{
     display: flex;
     flex-direction: row;
-    padding: 0 1em;
-    background-color: rgba(245, 222, 179, 1);
+    /* padding: 0 1em; */
+    background-color: rgb(245, 222, 179);
+    height: 3em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+    justify-content: start;
 }
 
 .col1{
     display: flex;
     flex-direction: column;
     float: left;
-    width: 50%;
+    width: 35%;
+    padding: 0 1em;
 }
 
 .col2{
     display: flex;
     flex-direction: column;
     margin-left: 2em;
+    padding: 0 1em;
+}
+
+.userArea .raw{
+    background-color:lightsteelblue;
+}
+
+.raw .col{
+    width: 100%;
+    background-color: rgb(119, 132, 149);
+    margin: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* .userArea{
+    border: 3px solid rgb(88, 88, 88);
+} */
+
+.userCard{
+    border-top: 1px solid rgb(0, 0, 0);
+    /* border-bottom: 1px solid rgb(0, 0, 0); */
+}
+
+.img{
+    width: 9em;
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color:rgb(140, 155, 175);
+    /* display: flex;
+    flex-direction: column; */
+    float: left;
+}
+
+.titluIstoric{
+    background-color: rgb(184, 174, 153);
+    width: 100%;
+    margin: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 .programare .detalii .raw:nth-child(2n-1){
-    background-color:rgba(245, 222, 179, 0.5);
+    background-color:rgb(255, 245, 226);
 }
 
-.status{
+.programare .detalii .userArea .raw:nth-child(2n-1){
+    background-color:rgb(140, 155, 175);
+}
+
+.statusW, .statusR, .statusA{
     /* border-top: 1px solid black; */
-    padding: 0 1em;
+    padding: 0 0.5em;
     text-align: center;
     font-size: 1.3em;
     color: black;
     background-color: rgba(0, 191, 255, 0.7);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.statusR{
+    background-color: rgb(228, 117, 117);
+}
+
+.statusA{
+    background-color: rgb(95, 177, 95);
 }
 
 @media screen and (max-width: 800px){
     .programare{
         width: 90%;
+    }
+
+    .raw{
+        height: 2.5em;
+        font-size: 1em;
+    }
+
+    .img{
+        width: 7.5em;
     }
 }

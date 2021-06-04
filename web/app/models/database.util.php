@@ -105,8 +105,11 @@
 
         public function registerVisit($idDetinut, $idUser1, $idUser2, $idUser3, $data, $ora, $relatia, $scop){
             $idProgramare = rand(10000, 20000);
-            $stmt = $this->conn->prepare("INSERT INTO programari VALUES( ? , ? , ? , ? , ? , ? , ? , ? , ? )");
-            $stmt->bind_param("iiiiissss", $idProgramare, $idDetinut, $idUser1, $idUser2, $idUser3, $data, $ora, $relatia, $scop);
+            $status = 0;
+            $motiv = null;
+
+            $stmt = $this->conn->prepare("INSERT INTO programari VALUES( ? , ? , ? , ? , ? , ? , ? , ? , ? , ?, ? )");
+            $stmt->bind_param("iiiiissssis", $idProgramare, $idDetinut, $idUser1, $idUser2, $idUser3, $data, $ora, $relatia, $scop, $status, $motiv);
 
             if(trim($idUser2) == ""){
                 $idUser2 = null;
@@ -120,6 +123,36 @@
             $stmt->close();
 
             return $idProgramare;
+        }
+
+        public function getProgramari($idUser){
+            $stmt = $this->conn->prepare("SELECT * FROM programari WHERE id_user1 = ? OR id_user2 = ? OR id_user3 = ? ORDER BY status");
+            $stmt->bind_param("iii", $idUser, $idUser, $idUser);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $stmt->close();
+
+            return $result;
+        }
+
+        public function findDetinutById($id){
+            $stmt = $this->conn->prepare("SELECT * FROM detinuti WHERE id_detinut = ?");
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $stmt->close();
+
+            return $result->fetch_assoc();
+        }
+
+        public function findUserById($id){
+            $stmt = $this->conn->prepare("SELECT * FROM user WHERE id_user = ?");
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $stmt->close();
+
+            return $result->fetch_assoc();
         }
 
     }

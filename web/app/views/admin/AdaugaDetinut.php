@@ -41,7 +41,7 @@
         </div>
     </div>
 
-    <form class="search">
+    <form class="search" method="POST">
         <label for="fname" class="titlu">ADAUGA UN DETINUT</label>
         <div class="line">
             <label for="fname">Cod Unic Detinut</label>

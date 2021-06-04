@@ -39,110 +39,170 @@
         </div>
 </div>
 
-    <div class="programare">
-        <div class="edit">
-            <i class="fa fa-edit"></i>
-        </div>
-        <div class="detalii">
-            <div class="raw">
-                <p class="col1">Data vizitei: </p>
-                <p class="col2"><time datetime="2021-04-20">20-04-2021</time></p>
-            </div>
-            <div class="raw">
-                <p class="col1">Ora vizitei: </p>
-                <p class="col2"><time datetime="10:00">10:00 AM</time></p>
-            </div>
-            <div class="raw">
-                <p class="col1">Numele Detinutului: </p>
-                <p class="col2">Laparnaie Daniel</p>
-            </div>
-            <div class="raw">
-                <p class="col1">Vizitatr: </p>
-                <p class="col2">Eu</p>
-            </div>
-            <div class="raw">
-                <p class="col1">Grad rudenie:</p>
-                <p class="col2">Sora/Frate</p>
-            </div>
-            <div class="raw">
-                <p class="col1">Durata vizitei: </p>
-                <p class="col2"><time datetime="PT0H30M">30 min</time></p>
-            </div>
-        </div>
-        <div class="status">
-            <p>Status: In curs de procesare...</p>
-        </div>
-    </div>
+ <?php 
 
-    <div class="programare">
-        <div class="edit">
-            <i class="fa fa-edit"></i>
-        </div>
-        <div class="detalii">
-            <div class="raw">
-                <p class="col1">Data vizitei: </p>
-                <p class="col2"><time datetime="2021-04-20">20-04-2021</time></p>
-            </div>
-            <div class="raw">
-                <p class="col1">Ora vizitei: </p>
-                <p class="col2"><time datetime="10:00">10:00 AM</time></p>
-            </div>
-            <div class="raw">
-                <p class="col1">Numele Detinutului: </p>
-                <p class="col2">Laparnaie Daniel</p>
-            </div>
-            <div class="raw">
-                <p class="col1">Vizitatr: </p>
-                <p class="col2">Eu</p>
-            </div>
-            <div class="raw">
-                <p class="col1">Grad rudenie:</p>
-                <p class="col2">Sora/Frate</p>
-            </div>
-            <div class="raw">
-                <p class="col1">Durata vizitei: </p>
-                <p class="col2"><time datetime="PT0H30M">30 min</time></p>
-            </div>
-        </div>
-        <div class="status">
-            <p>Status: In curs de procesare...</p>
-        </div>
-    </div>
+foreach ($data["programari"] as $s) {
+    // <div class=\"edit\">
+    //     <i class=\"fa fa-edit\"></i>
+    // </div>
+    echo
+    "<div class=\"programare\">
 
-    <div class="programare">
-        <div class="edit">
-            <i class="fa fa-edit"></i>
-        </div>
-        <div class="detalii">
-            <div class="raw">
-                <p class="col1">Data vizitei: </p>
-                <p class="col2"><time datetime="2021-04-20">20-04-2021</time></p>
+        <div class=\"detalii\">
+            <div class=\"raw\">
+                <label class=titluIstoric> Programare #". $s["programare"]["id_programare"] ."</label>
             </div>
-            <div class="raw">
-                <p class="col1">Ora vizitei: </p>
-                <p class="col2"><time datetime="10:00">10:00 AM</time></p>
+
+            <div class=\"userArea\">
+                <div class=\"raw\">
+                    <label class=col>Detinut</label>
+                </div>
+        
+                <div class=\"userCard\">
+                    <img class=\"img\" src=\"/public/images/". $s["detinut"]["poza"] ."\" alt=\"prisonerGirl1.png\">
+
+                    <div class=\"raw\">
+                        <p class=\"col1\">Nume: </p>
+                        <p class=\"col2\"> ". $s["detinut"]["nume"] ." </time></p>
+                    </div>
+
+                    <div class=\"raw\">
+                        <p class=\"col1\"> Prenume </p>
+                        <p class=\"col2\"> ". $s["detinut"]["prenume"] ." </p>
+                    </div>
+
+                    <div class=\"raw\">
+                        <p class=\"col1\"> codVizitator </p>
+                        <p class=\"col2\"> #". $s["detinut"]["id_detinut"] ." </p>
+                    </div>
+                </div>
             </div>
-            <div class="raw">
-                <p class="col1">Numele Detinutului: </p>
-                <p class="col2">Laparnaie Daniel</p>
+
+            <div class=\"userArea\">
+                <div class=\"raw\">
+                    <label class=col>Vizitatori</label>
+                </div>";
+    
+        
+        if (!($s["user1"] === null)) {
+            echo"
+                <div class=\"userCard\">
+                    <img class=\"img\" src=\"/public/images/". $s["user1"]["photo"] ."\" alt=\"prisonerGirl1.png\">
+
+                    <div class=\"raw\">
+                        <p class=\"col1\"> Nume: </p>
+                        <p class=\"col2\"> ". $s["user1"]["first_name"] ." </time></p>
+                    </div>
+
+                    <div class=\"raw\">
+                        <p class=\"col1\"> Prenume: </p>
+                        <p class=\"col2\"> ". $s["user1"]["last_name"] ." </p>
+                    </div>
+
+                    <div class=\"raw\">
+                        <p class=\"col1\"> CodUnic </p>
+                        <p class=\"col2\"> #". $s["user1"]["id_user"] ." </p>
+                    </div>
+                </div>";
+        }
+
+        if (!($s["user2"] === null)) {
+            echo"
+                <div class=\"userCard\">
+                    <img class=\"img\" src=\"/public/images/". $s["user2"]["photo"] ."\" alt=\"prisonerGirl1.png\">
+
+                    <div class=\"raw\">
+                        <p class=\"col1\"> Nume: </p>
+                        <p class=\"col2\"> ". $s["user2"]["first_name"] ." </time></p>
+                    </div>
+
+                    <div class=\"raw\">
+                        <p class=\"col1\"> Prenume: </p>
+                        <p class=\"col2\"> ". $s["user2"]["last_name"] ." </p>
+                    </div>
+
+                    <div class=\"raw\">
+                        <p class=\"col1\"> CodUnic </p>
+                        <p class=\"col2\"> #". $s["user2"]["id_user"] ." </p>
+                    </div>
+                </div>";
+        }
+
+        if (!($s["user3"] === null)) {
+            echo"
+                <div class=\"userCard\">
+                    <img class=\"img\" src=\"/public/images/". $s["user3"]["photo"] ."\" alt=\"prisonerGirl1.png\">
+
+                    <div class=\"raw\">
+                        <p class=\"col1\"> Nume: </p>
+                        <p class=\"col2\"> ". $s["user3"]["first_name"] ." </time></p>
+                    </div>
+
+                    <div class=\"raw\">
+                        <p class=\"col1\"> Prenume: </p>
+                        <p class=\"col2\"> ". $s["user3"]["last_name"] ." </p>
+                    </div>
+
+                    <div class=\"raw\">
+                        <p class=\"col1\"> CodUnic </p>
+                        <p class=\"col2\"> #". $s["user3"]["id_user"] ." </p>
+                    </div>
+                </div>";
+        }
+
+              
+    echo"
             </div>
-            <div class="raw">
-                <p class="col1">Vizitatr: </p>
-                <p class="col2">Eu</p>
+
+            <div class=\"raw\">
+                <p class=\"col1\"> Data Programarii: </p>
+                <p class=\"col2\"> ". $s["programare"]["data"] ."</p>
             </div>
-            <div class="raw">
-                <p class="col1">Grad rudenie:</p>
-                <p class="col2">Sora/Frate</p>
+
+            <div class=\"raw\">
+                <p class=\"col1\"> Ora Vizitei: </p>
+                <p class=\"col2\"> ". $s["programare"]["ora"] ." </p>
             </div>
-            <div class="raw">
-                <p class="col1">Durata vizitei: </p>
-                <p class="col2"><time datetime="PT0H30M">30 min</time></p>
+
+            <div class=\"raw\">
+                <p class=\"col1\"> Relatia: </p>
+                <p class=\"col2\"> ". $s["programare"]["relatia_cu_detinutul"] ." </p>
             </div>
-        </div>
-        <div class="status">
-            <p>Status: In curs de procesare...</p>
-        </div>
-    </div>
+
+            <div class=\"raw\">
+                <p class=\"col1\"> Scopul Vizitei: </p>
+                <p class=\"col2\"> ". $s["programare"]["natura_vzitei"] ." </p>
+            </div>
+        </div>";
+
+        if ($s["programare"]["status"] === 0) {
+            echo"
+        <div class=\"statusW\">
+            <p> IN CURS DE PROCESARE </p>
+        </div>";
+        } else if($s["programare"]["status"] > 0){
+            echo"
+            <div class=\"statusA\">
+                <p>APROBAT!</p>
+            </div>";
+        } else if($s["programare"]["status"] < 0){
+            echo"
+            <div class=\"raw\">
+                <p class=\"col1\"> Motivul Neaprobarii: </p>
+                <p class=\"col2\"> ". $s["programare"]["motiv_neaprobare"] ." </p>
+            </div>
+
+            <div class=\"statusR\">
+                <p>RESPINS!</p>
+            </div>";
+        }
+
+    echo "</div>";
+}
+
+    echo count($data["programari"]);
+
+?>
 
 </body>
 </html>
