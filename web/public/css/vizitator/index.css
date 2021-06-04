@@ -114,6 +114,14 @@ body{
     /* border: 1px solid white; */
     padding: 0.5em 0.5em;
     margin: unset;
+    padding: unset;
+}
+
+.firstText{
+    font-size: 5em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    color: rgb(0, 0, 63);
 }
 
 @media screen and (max-width: 1000px){
@@ -193,6 +201,10 @@ body{
     }
 
     .test{
-        font-size: 3em;
+        font-size: 2em;
+    }
+
+    .firstText{
+        font-size: 2em;
     }
 }

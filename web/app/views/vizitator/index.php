@@ -41,6 +41,12 @@
         </div>
     </div>
 
+    <?php
+        echo "
+            <label class=\"firstText\"> Bine ai revenit ". $data["user"]->name ." </label>
+        "
+    ?>
+
     <div class="test">
         <a href="/vizitator/viziteaza">
             <i class="fa fa-plus"></i>

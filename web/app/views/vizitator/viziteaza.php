@@ -13,7 +13,7 @@
 </head>
 <body>
     
-<div class="fullTopnav">
+    <div class="fullTopnav">
         <div id="myTopnav" class="topnav">
             <a id="home" href="/vizitator/index">Home</a>
             <a id="istoric" href="/vizitator/istoric">Istoric vizite</a>
@@ -30,14 +30,16 @@
             <a href="javascript:void(0);" class="icon" onclick="Func()">
                 <i class="fa fa-bars"></i>
             </a>
-            <a id="user" href="#account" class="logged" onclick="AccShow(this.id)">Nume User</a>
+            <?php
+                echo "<a id=\"user\" href=\"#account\" class=\"logged\" onclick=\"AccShow(this.id)\">" . $data["user"]->name . "</a>";
+            ?>
             <div id="userManage" class="extra">
-                <a id="logout" href="../../StartPage/html/LoginPage.html">Schimba cont</a>
+                <a id="logout" href="/auth/logout">Schimba cont</a>
                 <a id="modify" href="#change_account_data">Modifica cont</a>
                 <a id="remove" href="index/del_account">Sterge Cont</a>
             </div>
         </div>
-</div>
+    </div>
 
 <div class="message" id="messageBox">
     <label>Message #1</label>

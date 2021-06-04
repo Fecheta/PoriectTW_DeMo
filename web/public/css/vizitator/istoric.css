@@ -60,6 +60,10 @@ body{
     background-color:lightsteelblue;
 }
 
+.userArea .col2{
+    margin:unset;
+}
+
 .raw .col{
     width: 100%;
     background-color: rgb(119, 132, 149);
