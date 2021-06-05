@@ -41,6 +41,17 @@
             return $result->fetch_assoc();
         }
 
+        public function getAdminAccount($username){
+            $stmt = $this->conn->prepare("SELECT * FROM cont_administrator WHERE username = ?");
+            $stmt->bind_param("s", $username);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            $stmt->close();
+
+            return $result->fetch_assoc();
+        }
+
         public function selectByNameOrCod($name_cod){
 
             if(!is_numeric($name_cod)){

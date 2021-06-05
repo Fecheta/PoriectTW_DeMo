@@ -42,7 +42,7 @@
     </div>
 
     <div class ="button">
-        <form action="/startPages/AdministratorPage">  
+        <form action="/startPages/LoginPageAdmin">  
             <button class="item"> Login as Administrator </button>
         </form>
     </div>

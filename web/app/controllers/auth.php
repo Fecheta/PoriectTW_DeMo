@@ -61,8 +61,42 @@ class Auth extends Controller{
         );
     }
 
-    public function register(){
+    public function loginAdmin(){
+        $username = isset($_POST["username"]) ? $_POST["username"] : '';
+        $password = isset($_POST["password"]) ? $_POST["password"] : '';
 
+        $ok = true;
+        $messages = array();
+
+        if(!isset($_POST["username"]) || empty($username)){
+            $ok = false;
+            $messages[] = 'Username cannot be empty!';
+        }
+    
+        if(!isset($_POST["password"]) || empty($password)){
+            $ok = false;
+            $messages[] = 'Password cannot be empty!';
+        }
+    
+        if($ok){
+            $user = getUserAdmin($username, $password);
+
+            if($user){
+                loginAdmin($username, $password, $user->idUser);
+                $ok = true;
+                $messages[] = 'Successfull login!';
+            } else {
+                $ok = false;
+                $messages[] = 'Incorect user/password combination!';
+            }
+        }
+    
+        echo json_encode(
+            array(
+                'ok' => $ok,
+                'messages' => $messages
+            )
+        );
     }
 
     public function logout(){
@@ -70,6 +104,20 @@ class Auth extends Controller{
         $_SESSION["password_vizitator"] = null;
         $_SESSION["id_vizitator"] = null;
         header("Location: /");
+    }
+
+    public function adminLogout(){
+        $_SESSION["username_admin"] = null;
+        $_SESSION["password_admin"] = null;
+        $_SESSION["id_admin"] = null;
+        header("Location: /");
+
+        // $admin = getLoggedInAdmin();
+        // print_r($admin);
+    }
+
+    public function register(){
+
     }
 
 }

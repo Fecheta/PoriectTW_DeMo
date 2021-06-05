@@ -20,8 +20,16 @@ class StartPages extends Controller{
         $view = $this->view('startPages/SignUpPage',$data);
     }
 
-    public function AdministratorPage($data = []){
-        $view = $this->view('startPages/AdministratorPage', $data);
+    public function LoginPageAdmin($data = []){
+        $admin = getLoggedInAdmin();
+
+        if ($admin) {
+            $view = $this->view('admin/index', $data);
+            header('Location: /admin/index');
+            // print_r($admin);
+        } else {
+            $view = $this->view('startPages/LoginPageAdmin', $data);
+        }
     }
 
     public function index($data = []){
