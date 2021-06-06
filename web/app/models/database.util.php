@@ -146,9 +146,27 @@
             return $result;
         }
 
+        public function getAllProgramari(){
+            $stmt = $this->conn->prepare("SELECT * FROM programari WHERE status = 0");
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $stmt->close();
+
+            return $result;
+        }
+
         public function getVizite($idUser){
             $stmt = $this->conn->prepare("SELECT * FROM vizite WHERE id_user1 = ? OR id_user2 = ? OR id_user3 = ? ORDER BY status");
             $stmt->bind_param("iii", $idUser, $idUser, $idUser);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $stmt->close();
+
+            return $result;
+        }
+
+        public function getAllVizite(){
+            $stmt = $this->conn->prepare("SELECT * FROM vizite");
             $stmt->execute();
             $result = $stmt->get_result();
             $stmt->close();
@@ -175,6 +193,17 @@
             $stmt->close();
 
             return $result->fetch_assoc();
+        }
+
+        public function insertDetinut($nume, $prenume, $CNP, $varsta, $dataNastere, $infractiuneComisa, $pedeapsaPrimita, $pedeapsaRamasa, $dataCondamnarii, $poza, $gen){
+            $idDetinut = rand(1000, 10000);
+            
+            $stmt = $this->conn->prepare("INSERT INTO detinuti VALUES( ? , ? , ? , ? , ? , ? , ? , ? , ? , ?, ?, ?)");
+            $stmt->bind_param("issiisssssss", $idDetinut, $nume, $prenume, $CNP, $varsta, $dataNastere, $infractiuneComisa, $pedeapsaPrimita, $pedeapsaRamasa, $dataCondamnarii, $poza, $gen);
+            $stmt->execute();
+            $stmt->close();
+
+            return $idDetinut;
         }
 
     }

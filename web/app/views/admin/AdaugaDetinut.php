@@ -41,47 +41,70 @@
         </div>
     </div>
 
-    <form class="search" method="POST">
+    <?php
+        if($data["status"] === "inserted"){
+            echo" 
+                <div class=\"messageSend\">
+                    <span>Detinutul a fost inregistrat cu id-ul: ". $data["idDetinut"] ."</span>
+                    <br>
+                    <span<>Datio refresh pentru o noua inregistrare</span>
+                </div>
+            ";
+            return;
+        }
+    ?>
+
+    <form class="search" method="POST" enctype="multipart/form-data">
         <label for="fname" class="titlu">ADAUGA UN DETINUT</label>
         <div class="line">
-            <label for="fname">Cod Unic Detinut</label>
-            <input id="fname" type="text" placeholder="cod" required>
-        </div>
-        <div class="line">
             <label for="fname">Numele</label>
-            <input id="fname" type="text" placeholder="Numele de familie" required>
+            <input id="fname" type="text" placeholder="Numele de familie" name="nume" required>
         </div>
         <div class="line">
             <label for="lname">Prenumele</label>
-            <input id="lname" type="text" placeholder="Prenumele" required>
+            <input id="lname" type="text" placeholder="Prenumele" name="prenume" required>
         </div>
         <div class="line">
             <label for="cnp">CNP</label>
-            <input id="cnp" type="number" placeholder="Cod Numeric Personal" required>
+            <input id="cnp" type="number" placeholder="Cod Numeric Personal" name="CNP" required>
         </div>
         <div class="line">
-            <label for="day">Varsta</label>
-           <input id="lname" type="number" placeholder="Varsta" required>
+            <label for="varsta">Varsta</label>
+           <input id="varsta" type="number" placeholder="Varsta" name="varsta" required>
         </div>
         <div class="line">
-            <label for="day">Data Nasterii</label>
-            <input id="day" type="date" required>
+            <label for="date">Data Nasterii</label>
+            <input id="date" type="date" name="dataNastere" required>
         </div>
         <div class="line">
-            <label for="lname">Infractiune Comisa</label>
-            <input id="lname" type="text" placeholder="Infractiune" required>
+            <label for="infr">Infractiune Comisa</label>
+            <input id="infr" type="text" placeholder="Infractiune" name="infractiuneComisa" required>
         </div>
         <div class="line">
-            <label for="day">Pedeapsa primita</label>
-           <input id="lname" type="number" placeholder="Ani" required>
+            <label for="pedP">Pedeapsa primita</label>
+           <input id="pedP" type="number" placeholder="Ani" name="pedeapsaPrimita" required>
         </div>
         <div class="line">
-            <label for="day">Pedeapsa ramasa</label>
-           <input id="lname" type="number" placeholder="Zile" required>
+            <label for="pedR">Pedeapsa ramasa</label>
+           <input id="pedR" type="number" placeholder="Zile" name="pedeapsaRamasa" required>
         </div>
         <div class="line">
-            <label for="day">Data Condamnarii</label>
-            <input id="day" type="date" required>
+            <label for="dataC">Data Condamnarii</label>
+            <input id="dataC" type="date" name="dataCondamnarii" required>
+        </div>
+        <div class="line">
+            <label for="gen">Gen</label>
+            <!-- <input id="gen" type="text" name="gen" required> -->
+            <select name="gen" id="gen" required>
+                <option value="">-- select --</option>
+                <option value="masculin"> masculin </option>
+                <option value="feminin"> feminin </option>
+                <option value="necunoscut"> necunoscut </option>
+            </select>
+        </div>
+        <div class="line">
+            <label for="poza">Poza</label>
+            <input id="poza" type="file" name="poza" required>
         </div>
        
         <button class="btn">Inregistrează!</button>

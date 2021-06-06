@@ -10,15 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/public/css/admin/index.css">
     <script type="text/javascript" src="public/javaScript/topnav.js"></script>
-    <style>
-        table,
-        th,
-        td {
-            border: 2px solid #000;
-        }
-    </style>
 </head>
-
 <body>
 
     <div class="fullTopnav">
@@ -47,122 +39,155 @@
         </div>
     </div>
 
-    <table>
+    <?php
+        foreach ($data["programari"] as $s) {
+            // <div class=\"edit\">
+            //     <i class=\"fa fa-edit\"></i>
+            // </div>
+            echo
+            "<form class=\"programare\">
+        
+                <div class=\"detalii\">
+                    <div class=\"raw\">
+                        <label class=titluIstoric> Programare #". $s["programare"]["id_programare"] ."</label>
+                    </div>
+        
+                    <div class=\"userArea\">
+                        <div class=\"raw\">
+                            <label class=col>Detinut</label>
+                        </div>
+                
+                        <div class=\"userCard\">
+                            <img class=\"img\" src=\"/public/images/". $s["detinut"]["poza"] ."\" alt=\"prisonerGirl1.png\">
+        
+                            <div class=\"raw\">
+                                <p class=\"col1\">Nume: </p>
+                                <p class=\"col2\"> ". $s["detinut"]["nume"] ." </time></p>
+                            </div>
+        
+                            <div class=\"raw\">
+                                <p class=\"col1\"> Prenume </p>
+                                <p class=\"col2\"> ". $s["detinut"]["prenume"] ." </p>
+                            </div>
+        
+                            <div class=\"raw\">
+                                <p class=\"col1\"> codVizitator </p>
+                                <p class=\"col2\"> #". $s["detinut"]["id_detinut"] ." </p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class=\"userArea\">
+                        <div class=\"raw\">
+                            <label class=col>Vizitatori</label>
+                        </div>";
+            
+                
+                if (!($s["user1"] === null)) {
+                    echo"
+                        <div class=\"userCard\">
+                            <img class=\"img\" src=\"/public/images/". $s["user1"]["photo"] ."\" alt=\"prisonerGirl1.png\">
+        
+                            <div class=\"raw\">
+                                <p class=\"col1\"> Nume: </p>
+                                <p class=\"col2\"> ". $s["user1"]["first_name"] ." </time></p>
+                            </div>
+        
+                            <div class=\"raw\">
+                                <p class=\"col1\"> Prenume: </p>
+                                <p class=\"col2\"> ". $s["user1"]["last_name"] ." </p>
+                            </div>
+        
+                            <div class=\"raw\">
+                                <p class=\"col1\"> CodUnic </p>
+                                <p class=\"col2\"> #". $s["user1"]["id_user"] ." </p>
+                            </div>
+                        </div>";
+                }
+        
+                if (!($s["user2"] === null)) {
+                    echo"
+                        <div class=\"userCard\">
+                            <img class=\"img\" src=\"/public/images/". $s["user2"]["photo"] ."\" alt=\"prisonerGirl1.png\">
+        
+                            <div class=\"raw\">
+                                <p class=\"col1\"> Nume: </p>
+                                <p class=\"col2\"> ". $s["user2"]["first_name"] ." </time></p>
+                            </div>
+        
+                            <div class=\"raw\">
+                                <p class=\"col1\"> Prenume: </p>
+                                <p class=\"col2\"> ". $s["user2"]["last_name"] ." </p>
+                            </div>
+        
+                            <div class=\"raw\">
+                                <p class=\"col1\"> CodUnic </p>
+                                <p class=\"col2\"> #". $s["user2"]["id_user"] ." </p>
+                            </div>
+                        </div>";
+                }
+        
+                if (!($s["user3"] === null)) {
+                    echo"
+                        <div class=\"userCard\">
+                            <img class=\"img\" src=\"/public/images/". $s["user3"]["photo"] ."\" alt=\"prisonerGirl1.png\">
+        
+                            <div class=\"raw\">
+                                <p class=\"col1\"> Nume: </p>
+                                <p class=\"col2\"> ". $s["user3"]["first_name"] ." </time></p>
+                            </div>
+        
+                            <div class=\"raw\">
+                                <p class=\"col1\"> Prenume: </p>
+                                <p class=\"col2\"> ". $s["user3"]["last_name"] ." </p>
+                            </div>
+        
+                            <div class=\"raw\">
+                                <p class=\"col1\"> CodUnic </p>
+                                <p class=\"col2\"> #". $s["user3"]["id_user"] ." </p>
+                            </div>
+                        </div>";
+                }
+        
+                      
+            echo"
+                    </div>
+        
+                    <div class=\"raw\">
+                        <p class=\"col1\"> Data Programarii: </p>
+                        <p class=\"col2\"> ". $s["programare"]["data"] ."</p>
+                    </div>
+        
+                    <div class=\"raw\">
+                        <p class=\"col1\"> Ora Vizitei: </p>
+                        <p class=\"col2\"> ". $s["programare"]["ora"] ." </p>
+                    </div>
+        
+                    <div class=\"raw\">
+                        <p class=\"col1\"> Relatia: </p>
+                        <p class=\"col2\"> ". $s["programare"]["relatia_cu_detinutul"] ." </p>
+                    </div>
+        
+                    <div class=\"raw\">
+                        <p class=\"col1\"> Scopul Vizitei: </p>
+                        <p class=\"col2\"> ". $s["programare"]["natura_vzitei"] ." </p>
+                    </div>
+                    <div class=\"raw\">
+                        <p class=\"col1\"> Motiv Neaprobare: </p>
+                        <input class=\"col2\" type=\"text\" placeholder=\"motiv\" name=\"motiv\">
+                    </div>";
+                // </div>";
+
+                    echo" </div>
+                <div class=\"statusW\">
+                    <button class=\"accept\" name=\"accept\">Accepta</button>
+                    <button class=\"respinge\" name=\"respinge\">Respinge</button>
+                </div>";
+        
+            echo "</form>";
+        }
+    ?>
 
 
-                <tr>
-                    <th>Numele si Prenumele vizitatorului</th>
-                    <th>CNP</th>
-                    <th>Grad de rudenie</th>
-                    <th>Ora inceperii vizitei</th>
-                    <th>Numele Detinutului</th>
-                    <th>Scopul vizitei</th>
-
-                </tr>
-                <tr>
-                    <td>VIZITATOR1</td>
-                    <td>130</td>
-                    <td>unchi</td>
-                    <td>09:00</td>
-                    <td>Detinut4</td>
-                    <td>Verificarea starii detinutului</td>
-                </tr>
-                <tr>
-                    <td>VIZITATOR2</td>
-                    <td>131</td>
-                    <td>sotie</td>
-                    <td>09:00</td>
-                    <td>Detinut2</td>
-                    <td>Verificarea starii detinutului</td>
-                </tr>
-                <tr>
-                    <td>VIZITATOR3</td>
-                    <td>133</td>
-                    <td>frate</td>
-                    <td>09:00</td>
-                    <td>Detinut7</td>
-                    <td>Verificarea starii detinutului</td>
-                </tr>
-                <tr>
-                    <td>VIZITATOR4</td>
-                    <td>111</td>
-                    <td>Sotie</td>
-                    <td>09:30</td>
-                    <td>Detinut9</td>
-                    <td>Verificarea starii detinutului</td>
-                </tr>
-                <tr>
-                    <td>VIZITATOR5</td>
-                    <td>134</td>
-                    <td>sora</td>
-                    <td>09:30</td>
-                    <td>Detinut6</td>
-                    <td>Verificarea starii detinutului</td>
-                </tr>
-                <tr>
-                    <td>VIZITATOR6</td>
-                    <td>135</td>
-                    <td>unchi</td>
-                    <td>10:00</td>
-                    <td>Detinut7</td>
-                    <td>Verificarea starii detinutului</td>
-                </tr>
-                <tr>
-                    <td>VIZITATO7</td>
-                    <td>137</td>
-                    <td>bunic</td>
-                    <td>10:00</td>
-                    <td>Detinut6</td>
-                    <td>Verificarea starii detinutului</td>
-                </tr>
-                <tr>
-                    <td>VIZITATOR8</td>
-                    <td>138</td>
-                    <td>unchi</td>
-                    <td>10:30</td>
-                    <td>Detinut11</td>
-                    <td>Verificarea starii detinutului</td>
-                </tr>
-                <tr>
-                    <td>VIZITATOR9</td>
-                    <td>139</td>
-                    <td>unchi</td>
-                    <td>10:30</td>
-                    <td>Detinut6</td>
-                    <td>Verificarea starii detinutului</td>
-                    <tr>
-                        <td>VIZITATOR10</td>
-                        <td>141</td>
-                        <td>frate</td>
-                        <td>11:30</td>
-                        <td>Detinut8</td>
-                        <td>Verificarea starii detinutului</td>
-                    </tr>
-                    <tr>
-                        <td>VIZITATOR11</td>
-                        <td>142</td>
-                        <td>mama</td>
-                        <td>12:00</td>
-                        <td>Detinut11</td>
-                        <td>Verificarea starii detinutului</td>
-                    </tr>
-                    <tr>
-                        <td>VIZITATOR12</td>
-                        <td>143</td>
-                        <td>unchi</td>
-                        <td>12:00</td>
-                        <td>Detinut14</td>
-                        <td>Verificarea starii detinutului</td>
-                    </tr>
-                    <tr>
-                        <td>VIZITATOR13</td>
-                        <td>144</td>
-                        <td>mama</td>
-                        <td>12:00</td>
-                        <td>Detinut12</td>
-                        <td>Verificarea starii detinutului</td>
-                    </tr>
-
-    </table>
 </body>
 </html>

@@ -17,6 +17,7 @@ body {
     padding: 1em 1em;
     margin: 2em 0;
     text-align: center;
+    border-radius: 1em;
 }
 
 .search .btn {
@@ -32,6 +33,7 @@ body {
     width: 90%;
     background-color: rgb(233, 233, 233);
     margin: 0.5em 0.5em;
+    border-radius: 1em;
 }
 
 .line label {
@@ -86,6 +88,16 @@ input[type="number"]::-webkit-outer-spin-button {
     border-radius: 1em;
 }
 
+.messageSend{
+    border: 5px solid rgb(0, 98, 0);
+    font-size:  2em;
+    margin-top: 3em;
+    background-color: rgb(110, 199, 110);
+    padding: 1em 0em;
+    width: 40%;
+    border-radius: 1em;
+}
+
 @media screen and (max-width: 1000px) {
     .search {
         width: 85%;
@@ -115,5 +127,10 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .btn {
         width: 99%;
+    }
+
+    .messageSend{
+        width: 85%;
+        font-size: 1.25em;
     }
 }

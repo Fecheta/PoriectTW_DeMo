@@ -59,39 +59,39 @@ if (isset($data["data"])) {
                     <img src=\"/public/images/". $row["poza"] ."\" alt=\"prisoner\" class=\"forImg\">
                     <div class=\"info\">
                         <h4>". $row["nume"] . " " . $row["prenume"] ."</h4>
-                        <h5>". $row["infractiune_comisa"] ."</h5>
+                        <h5>". " (#". $row["id_detinut"] .")" ."</h5>
                     </div>
                 </div>
                 <div class=\"pData\">
                     <div class=\"rawData\">
-                        <p class=\"col1Data\">Data nasterii: </p>
-                        <p class=\"col2Data\"><time datetime=\"1980-04-20\">". $row["data_nasterii"] ."</time></p>
+                        <p class=\"col1Data\">Varsta: </p>
+                        <p class=\"col2Data\">". $row["varsta"] ." Ani</p>
                     </div>
                     <div class=\"rawData\">
-                        <p class=\"col1Data\">Starea de spirit</p>
-                        <p class=\"col2Data\">Necunoscuta</p>
+                        <p class=\"col1Data\">Fapta comisa: </p>
+                        <p class=\"col2Data\">".$row["infractiune_comisa"]."</p>
                     </div>
                     <div class=\"rawData\">
-                        <p class=\"col1Data\">Starea de sanatate</p>
-                        <p class=\"col2Data\">Buna</p>
+                        <p class=\"col1Data\">Data Condamnarii: </p>
+                        <p class=\"col2Data\">". $row["data_condamnarii"] ."</p>
                     </div>
                     <div class=\"rawData\">
                         <p class=\"col1Data\">Pedeapsa ramasa: </p>
-                        <p class=\"col2Data\">". $row["pedeapsa_ramasa"] ."</p>
+                        <p class=\"col2Data\">". $row["pedeapsa_ramasa"] ." Zile</p>
                     </div>
                     <div class=\"rawData\">
                         <p class=\"col1Data\">Pedeapsa totala: </p>
-                        <p class=\"col2Data\">". $row["pedeapsa_primita"] ."</p>
+                        <p class=\"col2Data\">". $row["pedeapsa_primita"] ." Ani</p>
                     </div>
                 </div>
             </div>
             ";
         }
     } else {
-        echo "<h1> No data Fownd!! </h1>";
+        echo "<h1> Nu exista nici un detinut pentru datele introduse </h1>";
     }
 } else {
-    echo "<h1> Type in a name or a unique cod to find somenone!! </h1>";
+    echo "<h1> Cauta un detinut dupa nume/prenume sau dupa codul sau! </h1>";
 }
 ?>
 <!-- <form method="POST" class="search" action="/vizitator/profil">
