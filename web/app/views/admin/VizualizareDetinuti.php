@@ -47,7 +47,7 @@
         <button class="findBtn" type="submit"> <i class="fa fa-search"></i> </button>
     </form>
 
-<?php
+    <?php
 if (isset($data["data"])) {
     if ($data["data"]->num_rows > 0) {
         while ($row = $data["data"]->fetch_assoc()) {
