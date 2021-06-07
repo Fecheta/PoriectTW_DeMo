@@ -201,7 +201,13 @@
                         <p>APROBAT!</p>
                     </div>";
                 } else if($s["programare"]["status"] < 0){
-                    echo" </div>
+                    echo"
+                    <div class=\"raw\">
+                        <p class=\"col1\"> Motivul Neaprobarii: </p>
+                        <p class=\"col2\"> ". $s["programare"]["motiv_neaprobare"] ." </p>
+                    </div>
+                    </div>
+
                     <div class=\"statusR\">
                         <p>RESPINS!</p>
                     </div>";

@@ -1,0 +1,104 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.options{
+    /* border: 1px solid black; */
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    flex-direction: row;
+    border-bottom: 1px solid rgb(56, 56, 56);
+    padding-bottom: 0.5em;
+    margin-top: 5em;
+}
+
+.term{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 10em;
+}
+
+.options select{
+    padding: 1em;
+    width: 10em;
+}
+
+.options button{
+    padding: 1em;
+    background-color: rgb(127, 207, 107);
+}
+
+.options button:hover{
+    background-color: rgb(96, 155, 81);
+}
+
+.topCard{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    margin-top: 3em;
+    width: 40%;
+    background-color: aliceblue;
+    height: 7em;
+    box-shadow: 3px 3px 10px rgb(92, 92, 92);
+}
+
+.nr0, .nr1{
+    background-color: rgb(162, 212, 255);
+    width: 60%;
+    height: 100%;
+    border-radius: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nr1{
+    background-color: rgb(145, 186, 223);
+}
+
+.topCard img{
+    width: 7em;
+    background-color: rgb(194, 226, 255);
+}
+
+.corner{
+    position: absolute;
+    background-color:rgb(226, 204, 147);
+    color: rgb(0, 0, 0);
+    font-size: 1.25em;
+    left: 0;
+    top: 0;
+}
+
+@media screen and (max-width: 1000px){
+    .options{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .term{
+        display: flex;
+        flex-direction: row;
+        justify-content:flex-end;
+        align-items:center;
+        width: 10em;
+        margin: 0.5em;
+    }
+
+    .topCard{
+        width: 100%;
+    }
+}
+

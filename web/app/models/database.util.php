@@ -207,12 +207,14 @@
             return $idDetinut;
         }
 
-        public function updateStatusProgramare($idProgramare, $status){
-            $stmt = $this->conn->prepare("UPDATE programari SET status = ? WHERE id_programare = ?");
-            $stmt->bind_param("ii", $status, $idProgramare);
+        public function updateStatusProgramare($idProgramare, $status, $motiv){
+            $stmt = $this->conn->prepare("UPDATE programari SET status = ?, motiv_neaprobare = ? WHERE id_programare = ?");
+            $stmt->bind_param("isi", $status, $motiv ,$idProgramare);
             $stmt->execute();
             $stmt->close();
         }
+
+
 
     }
 

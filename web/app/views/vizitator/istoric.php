@@ -192,13 +192,7 @@ foreach ($data["programari"] as $s) {
             <div class=\"raw\">
                 <p class=\"col1\"> Motivul Neaprobarii: </p>
                 <p class=\"col2\"> ". $s["programare"]["motiv_neaprobare"] ." </p>
-            </div>
-
-            <div class=\"raw\">
-                <p class=\"col1\"> Motivul Neaprobarii: </p>
-                <p class=\"col2\"> ". $s["programare"]["motiv_neaprobare"] ." </p>
             </div></div>
-
 
             <div class=\"statusR\">
                 <p>RESPINS!</p>

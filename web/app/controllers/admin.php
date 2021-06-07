@@ -90,15 +90,21 @@ class Admin extends Controller{
         $db = new Database();
 
         if($user){
+            $motiv = isset($_POST["motiv"]) ? $_POST["motiv"] : null; 
+
             if(isset($_POST["accept"])){
                 $view = $this->view('admin/Programari', array("message"=>"accepted", "id"=>$_POST["idProgramare"]));
-                $db->updateStatusProgramare($_POST["idProgramare"], 1);
+                $db->updateStatusProgramare($_POST["idProgramare"], 1, $motiv);
                 return;
             }
     
             if(isset($_POST["respinge"])){
                 $view = $this->view('admin/Programari', array("message"=>"rejected", "id"=>$_POST["idProgramare"]));
-                $db->updateStatusProgramare($_POST["idProgramare"], -1);
+                if ($motiv === null) {
+                    $db->updateStatusProgramare($_POST["idProgramare"], -1, "nespecificat");
+                } else {
+                    $db->updateStatusProgramare($_POST["idProgramare"], -1, $motiv);
+                }
                 return;
             }
 
@@ -128,7 +134,21 @@ class Admin extends Controller{
     }
 
     public function VizualizareDetinuti($data = []){
-        $view = $this->view('admin/VizualizareDetinuti', $data);
+        $user = getLoggedInAdmin();
+
+        if ($user) {
+            if(isset($_POST["name_cod"])){
+                $name_cod = $_POST["name_cod"];
+                $db = new Database();
+                $result = $db->selectByNameOrCod($name_cod);
+                $view = $this->view('admin/VizualizareDetinuti', array("user"=>$user, "data"=>$result));
+            }
+
+            $view = $this->view('admin/VizualizareDetinuti', array("user"=>$user));
+        } else {
+            $view = $this->view("startPages/LoginPageAdmin", $data);
+            header("Location: /startPages/LoginPageAdmin");
+        }
     }
 
     public function profil($data = []){

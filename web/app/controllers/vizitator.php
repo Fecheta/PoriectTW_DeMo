@@ -104,6 +104,10 @@ class Vizitator extends Controller{
 
         $view = $this->view('vizitator/profil', $res);
     }
+
+    public function statistics($data = []){
+        $view = $this->view('vizitator/statistics', $data);
+    }
 }
 
 ?>
