@@ -147,7 +147,8 @@
         }
 
         public function getAllProgramari(){
-            $stmt = $this->conn->prepare("SELECT * FROM programari WHERE status = 0");
+            $stmt = $this->conn->prepare("SELECT * FROM programari ORDER BY 
+                                                                    FIELD(status, 0, 1, -1)");
             $stmt->execute();
             $result = $stmt->get_result();
             $stmt->close();
@@ -204,6 +205,13 @@
             $stmt->close();
 
             return $idDetinut;
+        }
+
+        public function updateStatusProgramare($idProgramare, $status){
+            $stmt = $this->conn->prepare("UPDATE programari SET status = ? WHERE id_programare = ?");
+            $stmt->bind_param("ii", $status, $idProgramare);
+            $stmt->execute();
+            $stmt->close();
         }
 
     }

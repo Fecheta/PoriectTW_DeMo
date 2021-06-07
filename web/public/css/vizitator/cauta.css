@@ -93,7 +93,7 @@ form span:not(.titlu)::after{
     display: inline-block;
 }
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 800px){
     .search{
         width: 85%;
     }
@@ -128,5 +128,9 @@ form span:not(.titlu)::after{
 
     .btn{
         width: 99%;
+    }
+
+    .find{
+        width: 95%;
     }
 }

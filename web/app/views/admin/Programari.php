@@ -40,14 +40,24 @@
     </div>
 
     <?php
+        if (isset($data["message"])) {
+            if ($data["message"] === "accepted") {
+                echo "<h1> ACCEPTED ". $data["id"] ."</h1>";
+            } else {
+                echo "<h1> REJECTED ". $data["id"] ."</h1>";
+            }
+            return;
+        }
+
         foreach ($data["programari"] as $s) {
             // <div class=\"edit\">
             //     <i class=\"fa fa-edit\"></i>
             // </div>
             echo
-            "<form class=\"programare\">
+            "<form class=\"programare\" method=\"POST\">
         
                 <div class=\"detalii\">
+                    <input type=\"hidden\" name=\"idProgramare\" value=\"".$s["programare"]["id_programare"]."\">
                     <div class=\"raw\">
                         <label class=titluIstoric> Programare #". $s["programare"]["id_programare"] ."</label>
                     </div>
@@ -171,18 +181,31 @@
                     <div class=\"raw\">
                         <p class=\"col1\"> Scopul Vizitei: </p>
                         <p class=\"col2\"> ". $s["programare"]["natura_vzitei"] ." </p>
-                    </div>
-                    <div class=\"raw\">
-                        <p class=\"col1\"> Motiv Neaprobare: </p>
-                        <input class=\"col2\" type=\"text\" placeholder=\"motiv\" name=\"motiv\">
                     </div>";
                 // </div>";
 
+                if ($s["programare"]["status"] === 0) {
+                    echo" 
+                    <div class=\"raw\">
+                        <p class=\"col1\"> Motiv Neaprobare: </p>
+                        <input class=\"col2\" type=\"text\" placeholder=\"motiv\" name=\"motiv\">
+                    </div>
+                    </div>
+                    <div class=\"statusW\">
+                        <button class=\"accept\" name=\"accept\">Accepta</button>
+                        <button class=\"respinge\" name=\"respinge\">Respinge</button>
+                    </div>";
+                }else if($s["programare"]["status"] > 0){
                     echo" </div>
-                <div class=\"statusW\">
-                    <button class=\"accept\" name=\"accept\">Accepta</button>
-                    <button class=\"respinge\" name=\"respinge\">Respinge</button>
-                </div>";
+                    <div class=\"statusA\">
+                        <p>APROBAT!</p>
+                    </div>";
+                } else if($s["programare"]["status"] < 0){
+                    echo" </div>
+                    <div class=\"statusR\">
+                        <p>RESPINS!</p>
+                    </div>";
+                }
         
             echo "</form>";
         }

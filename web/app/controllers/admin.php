@@ -87,9 +87,21 @@ class Admin extends Controller{
 
     public function Programari($data = []){
         $user = getLoggedInAdmin();
+        $db = new Database();
 
         if($user){
-            $db = new Database();
+            if(isset($_POST["accept"])){
+                $view = $this->view('admin/Programari', array("message"=>"accepted", "id"=>$_POST["idProgramare"]));
+                $db->updateStatusProgramare($_POST["idProgramare"], 1);
+                return;
+            }
+    
+            if(isset($_POST["respinge"])){
+                $view = $this->view('admin/Programari', array("message"=>"rejected", "id"=>$_POST["idProgramare"]));
+                $db->updateStatusProgramare($_POST["idProgramare"], -1);
+                return;
+            }
+
             $programare = $db->getAllProgramari($user->idUser);
 
             $detinut;
