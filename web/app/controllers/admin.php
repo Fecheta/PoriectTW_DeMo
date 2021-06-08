@@ -174,14 +174,11 @@ public function IstoricVizite($data = []){
 
     if ($user) {
         $db = new Database();
-        $vizita = $db->getVizite($user->idUser);
-
+        $vizita = $db->getAllVizite();
         $detinut;
         $user1;
         $user2;
         $user3;
-
-       
         $resultVis;
 
 
