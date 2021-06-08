@@ -170,11 +170,10 @@ class Admin extends Controller{
     }
 }
 public function IstoricVizite($data = []){
-    $user = getLoggedInUser();
+    $user = getLoggedInAdmin();
 
     if ($user) {
         $db = new Database();
-        $programare = $db->getProgramari($user->idUser);
         $vizita = $db->getVizite($user->idUser);
 
         $detinut;
@@ -182,17 +181,9 @@ public function IstoricVizite($data = []){
         $user2;
         $user3;
 
-        $resultProg;
+       
         $resultVis;
 
-        while($row = $programare->fetch_assoc()){
-            $detinut = $db->findDetinutById($row["id_detinut"]);
-            $user1 = $db->findUserById($row["id_user1"]);
-            $user2 = $db->findUserById($row["id_user2"]);
-            $user3 = $db->findUserById($row["id_user3"]);
-
-            $resultProg[] = ["programare"=>$row, "detinut"=>$detinut, "user1"=>$user1, "user2"=>$user2, "user3"=>$user3];
-        }
 
         while($row = $vizita->fetch_assoc()){
             $detinut = $db->findDetinutById($row["id_detinut"]);
@@ -203,7 +194,7 @@ public function IstoricVizite($data = []){
             $resultVis[] = ["vizita"=>$row, "detinut"=>$detinut, "user1"=>$user1, "user2"=>$user2, "user3"=>$user3];
         }
 
-        $view = $this->view('admin/IstoricVizire', array("programari"=>$resultProg, "vizite"=>$resultVis, "user"=>$user));
+        $view = $this->view('admin/IstoricVizite', array( "vizite"=>$resultVis, "user"=>$user));
     } else {
         $view = $this->view("startPages/LoginPageAdministrator", $data);
         header("Location: /startPages/LoginPageAdministrator");
