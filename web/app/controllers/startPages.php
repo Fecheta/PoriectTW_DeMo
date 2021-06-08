@@ -65,15 +65,6 @@ class StartPages extends Controller{
                 $view = $this->view('startPages/SignUpPage');
             }
     }
-        }
-
-
-
-
-
-
-
-    }
 
     public function LoginPageAdmin($data = []){
         $admin = getLoggedInAdmin();
