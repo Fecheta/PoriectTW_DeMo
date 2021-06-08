@@ -18,9 +18,6 @@ class StartPages extends Controller{
 
     public function SignUpPage($data = []){
         
-       
-        
-
         $firstname;
         $lastname;
         $username;
@@ -36,15 +33,15 @@ class StartPages extends Controller{
                 isset($_POST["gender"]) )
             {
 
-             $firstname=$_POST['firstname'];
-             $lastname=$_POST['lastname'];
-             $username = $_POST['username'];
-             $password = $_POST['password'];
+             $firstname=$_POST["firstname"];
+             $lastname=$_POST["lastname"];
+             $username = $_POST["username"];
+             $password = $_POST["password"];
              $password_enc =password_hash($password, PASSWORD_DEFAULT, ["const"=>10]);
 
 
-             $birthdata = $_POST['birthday'];
-             $gender = $_POST['gender'];
+             $birthdata = $_POST["birthday"];
+             $gender = $_POST["gender"];
 
              $file = $_FILES["poza"];
              $fileName = $_FILES["poza"]["name"];
@@ -54,16 +51,12 @@ class StartPages extends Controller{
              $error = $_FILES["poza"]["error"];
 
              $ext = explode(".", $fileName);
-             $poza = uniqid('', true) . '.' . end($ext);
+             $poza = uniqid('', true) . "." . end($ext);
 
              $to = __DIR__ . "/../../public/images/".$poza;
              move_uploaded_file($tempName, $to);
 
-                 
-
-
-
-                $db = new Database();
+            $db = new Database();
                 
                   
                     $idUser =$db->registerVizitator($username, $password_enc);
@@ -71,11 +64,8 @@ class StartPages extends Controller{
                     $view = $this->view('startPages/SignUpPage', array("id"=>$idUser));
                    
                 
-               
-
-                
             } else {
-                $view = $this->view('startPages/SignUpPage',$data);
+                $view = $this->view("startPages/SignUpPage",$data);
             }
     }
 
