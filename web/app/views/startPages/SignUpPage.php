@@ -32,7 +32,7 @@
     <div>
     <input class= "inp" type="text" placeholder="First name" required/>
     <input type="text" class="inp" placeholder="Last name" required/><br/>
-    <input type="text" class="inp" placeholder="Mobile number or email" required pattern = "^([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3})|(\d{3}\d{3}\d{4})$"/><br/>
+    <input type="text" class="inp" placeholder="Username" required pattern = "^([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3})|(\d{3}\d{3}\d{4})$"/><br/>
     <input type="password" class="inp" placeholder="New password" required/>
     
    
