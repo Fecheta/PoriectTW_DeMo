@@ -13,11 +13,11 @@
 
 <body>
      <?php 
-    // if(isset($data["id"]))
-    // {
-    //     echo "Am inregistrat !";
-    //     return;
-    // }
+    if(isset($data["id"]))
+    {
+        echo "Am inregistrat !";
+        return;
+    }
     ?> 
     <header>
         <h1>Sign up</h1>
@@ -33,7 +33,7 @@
             <input class="inp" type="text" placeholder="First name" name="firstname" required />
             <input type="text" class="inp" placeholder="Last name" name="lastname" required /><br />
             <input type="text" class="inp" placeholder="Username" name="username" required
-                pattern="^([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3})|(\d{3}\d{3}\d{4})$" /><br />
+                /><br />
             <input type="password" class="inp" placeholder="New password" name="password" required />
 
 

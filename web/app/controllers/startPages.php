@@ -24,11 +24,10 @@ class StartPages extends Controller{
         $lastname;
         $username;
         $password;
-        $birthday;
+        $birthdata;
         $gender;
         $poza;
-        global $idVizitator;
-        global $idUser;
+        $idUser;
 
        
             if( isset($_POST["firstname"]) && isset($_POST["lastname"]) &&
@@ -42,7 +41,8 @@ class StartPages extends Controller{
              $password = $_POST['password'];
              $password_enc =password_hash($password, PASSWORD_DEFAULT, ["const"=>10]);
 
-             $year = $_POST['birthday'];
+
+             $birthdata = $_POST['birthday'];
              $gender = $_POST['gender'];
 
              $file = $_FILES["poza"];
@@ -63,13 +63,13 @@ class StartPages extends Controller{
 
 
                 $db = new Database();
-                if(isset($_POST["register"])){
+                
                   
                     $idUser =  $db->registerVizitator($username, $password_enc);
-                    $db->registerUser($idUser, $firstname, $lastname, $birthdata, $poza, $gen);
+                    $db->registerUser($idUser, $firstname, $lastname, $birthdata, $poza, $gender);
                     $view = $this->view('startPages/SignUpPage', array("id"=>$idUser));
-                    return;
-                }
+                   
+                
                
 
                 

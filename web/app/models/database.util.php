@@ -223,7 +223,7 @@
         public function registerVizitator ($username, $password)
         {   $id = rand(10, 1000);
             
-            $stmt = $this->conn->prepare("INSERT INTO cont_vizitator VALUES( ? , ? , ? , ?)");
+            $stmt = $this->conn->prepare("INSERT INTO cont_vizitator VALUES( ? , ? , ? , ? )");
             $stmt->bind_param("issi", $id, $username ,$password, $id);
             $stmt->execute();
             $stmt->close();
@@ -231,10 +231,10 @@
         }
 
 
-        public function registerUser ($idUser, $firstname, $lastname, $birthdata, $varsta, $photo, $gen )
+        public function registerUser ($idUser, $firstname, $lastname, $birthdata, $photo, $gen )
         {   
             
-            $stmt = $this->conn->prepare("INSERT INTO cont_vizitator (id_user,first_name,last_name,birth_date,photo,gen) VALUES( ? , ? , ? , ?, ?, ?)");
+            $stmt = $this->conn->prepare("INSERT INTO user (id_user,first_name,last_name,birth_date,photo,gen) VALUES( ? , ? , ? , ? , ? , ? )");
             $stmt->bind_param("isssss", $idUser, $firstname ,$lastname, $birthdata, $photo, $gen );
             $stmt->execute();
             $stmt->close();
