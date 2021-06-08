@@ -12,6 +12,13 @@
 </head>
 
 <body>
+     <?php 
+    // if(isset($data["id"]))
+    // {
+    //     echo "Am inregistrat !";
+    //     return;
+    // }
+    ?> 
     <header>
         <h1>Sign up</h1>
         <p>It's quick and easy.</p>
@@ -21,7 +28,7 @@
 
 
 
-    <form class="reg" action="/startPages/SignUpPage" method="post">
+    <form class="reg" action="/startPages/SignUpPage" method="post" enctype="multipart/form-data">
         <div>
             <input class="inp" type="text" placeholder="First name" name="firstname" required />
             <input type="text" class="inp" placeholder="Last name" name="lastname" required /><br />
