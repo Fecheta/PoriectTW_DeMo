@@ -193,7 +193,7 @@ public function IstoricVizite($data = []){
                 $sanatate = $_POST["sanatate"];*/
         if(isset($_POST["consemneaza"])){
             $view = $this->view('admin/IstoricVizite', array("message"=>"accepted", "id"=>$_POST["idVizita"]));
-            $db->updateVizitaCons($_POST["idVizita"],  1,$oferit,$primit,$rezumat,$spirit,$sanatate);
+            $db->updateVizitaCons($_POST["idVizita"],1,$oferit,$primit,$rezumat,$spirit,$sanatate);
             return;
         }
         
