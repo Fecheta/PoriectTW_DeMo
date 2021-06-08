@@ -1,6 +1,7 @@
 <?php
 
 include_once __DIR__ . "/../models/auth.util.php";
+require_once __DIR__ . "/../models/database.util.php";
 
 class StartPages extends Controller{
 
@@ -65,7 +66,7 @@ class StartPages extends Controller{
                 $db = new Database();
                 
                   
-                    $idUser =  $db->registerVizitator($username, $password_enc);
+                    $idUser =$db->registerVizitator($username, $password_enc);
                     $db->registerUser($idUser, $firstname, $lastname, $birthdata, $poza, $gender);
                     $view = $this->view('startPages/SignUpPage', array("id"=>$idUser));
                    
