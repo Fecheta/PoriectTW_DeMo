@@ -215,7 +215,7 @@
         }
         public function updateVizitaCons($idVizita, $status, $oferit,$primit,$rezumat,$spirit,$sanatate){
             $stmt = $this->conn->prepare("UPDATE programari SET status = ?, oferit = ?, primit = ?, rezumat = ?, spirit = ?, sanatate = ? WHERE id_vizita = ?");
-            $stmt->bind_param("isi", $idVizita, $status, $oferit,$primit,$rezumat,$spirit,$sanatate);
+            $stmt->bind_param("isssssi",  $status, $oferit,$primit,$rezumat,$spirit,$sanatate,$idVizita);
             $stmt->execute();
             $stmt->close();
         }

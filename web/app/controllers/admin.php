@@ -168,14 +168,32 @@ class Admin extends Controller{
 
         $view = $this->view('admin/vizita', $res);
     }
-}
+
 public function IstoricVizite($data = []){
+    /*$oferit;
+    $primit;
+    $rezumat;
+    $spirit;
+    $sanatate;*/
     $user = getLoggedInAdmin();
     $db = new Database();
     if ($user) {
+        $oferit= isset($_POST["oferit"]) ? $_POST["oferit"] : null; 
+        $primit = isset($_POST["primit"]) ? $_POST["primit"] : null; 
+        $rezumat = isset($_POST["rezumat"]) ? $_POST["rezumat"] : null; 
+        $spirit = isset($_POST["spirit"]) ? $_POST["spirit"] : null; 
+        $sanatate = isset($_POST["sanatate"]) ? $_POST["sanatate"] : null;
+        /*if( isset($_POST["oferit"]) && isset($_POST["primit"]) &&
+                isset($_POST["rezumat"]) && isset($_POST["spirit"]) &&
+                isset($_POST["sanatate"])){
+                $oferit = $_POST["oferit"];
+                $primit = $_POST["primit"];
+                $rezumat = $_POST["rezumat"];
+                $spirit = $_POST["spirit"];
+                $sanatate = $_POST["sanatate"];*/
         if(isset($_POST["consemneaza"])){
             $view = $this->view('admin/IstoricVizite', array("message"=>"accepted", "id"=>$_POST["idVizita"]));
-            $db->updateVizitaCons($_POST["idVizita"], 1, $oferit,$prmit,$rezumat,$spirit,$sanatate);
+            $db->updateVizitaCons($_POST["idVizita"],  1,$oferit,$primit,$rezumat,$spirit,$sanatate);
             return;
         }
         
@@ -201,6 +219,8 @@ public function IstoricVizite($data = []){
         $view = $this->view("startPages/LoginPageAdmin", $data);
         header("Location: /startPages/LoginPageAdmin");
     }
+
+}
 }
 
 ?>

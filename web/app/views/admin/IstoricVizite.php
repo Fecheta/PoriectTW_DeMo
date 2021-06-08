@@ -45,15 +45,16 @@
     foreach ($data["vizite"] as $s) {
     
     echo
-    "<div class=\"vizita\">
+    "<form method=\"POST\" action=\"/admin/IstoricVizite\" class=\"vizita\">
 
         <div class=\"detalii\">
+            <input type=\"hidden\" name=\"idVizita\" value=\"".$s["vizita"]["id_vizita"]."\">
             <div class=\"raw\">
-                <label class=titluIstoric>  Vizita #". $s["vizite"]["id_vizita"] ."</label>
+                <label class=\"titluIstoric\">  Vizita #". $s["vizita"]["id_vizita"] ."</label>
             </div>
             <div class=\"userArea\">
                 <div class=\"raw\">
-                    <label class=col>Detinut</label>
+                    <label class=\"col\">Detinut</label>
                 </div>
         
                 <div class=\"userCard\">
@@ -75,6 +76,12 @@
                     </div>
                 </div>
             </div>
+            <div class=\"userArea\">
+            <div class=\"raw\">
+                <label class=\"col\">Vizitator</label>
+            
+            </div>";
+
             if (!($s["user1"] === null)) {
             echo"
                 <div class=\"userCard\">
@@ -142,6 +149,7 @@
         }
         echo"
             </div>
+            
 
             <div class=\"raw\">
                 <p class=\"col1\"> Data Programarii: </p>
@@ -161,7 +169,7 @@
             <div class=\"raw\">
                 <p class=\"col1\"> Scopul Vizitei: </p>
                 <p class=\"col2\"> ". $s["vizita"]["natura_vzitei"] ." </p>
-            </div>;
+            </div>
             <div class=\"raw\">
                 <p class=\"col1\"> Durata vizitei: </p>
                 <p class=\"col2\"> ". $s["vizita"]["timp_petrecut"] ." </p>
@@ -169,29 +177,31 @@
         
         if($s["vizita"]["status"] <= 0){
             echo" 
+            
             <div class=\"raw\">
                  <p class=\"col1\"> Oferit Detinutului: </p>
-                <input class=\"col2\" type=\"text\" placeholder=\"primit\" name=\"primit\">
+                <input class=\"col2\" type=\"text\" placeholder=\"primit\" name=\"primit\" required>
             </div>
             <div class=\"raw\">
                  <p class=\"col1\"> Oferit Vizitatorului: </p>
-                <input class=\"col2\" type=\"text\" placeholder=\"oferit\" name=\"oferit\">
+                <input class=\"col2\" type=\"text\" placeholder=\"oferit\" name=\"oferit\" required>
             </div>
             <div class=\"raw\">
                  <p class=\"col1\"> Starea de spirit: </p>
-                <input class=\"col2\" type=\"text\" placeholder=\"spirit\" name=\"spirit\">
+                <input class=\"col2\" type=\"text\" placeholder=\"spirit\" name=\"spirit\" required>
             </div>
             <div class=\"raw\">
                  <p class=\"col1\"> Starea de sanatate: </p>
-                <input class=\"col2\" type=\"text\" placeholder=\"sanatate\" name=\"sanatate\">
+                <input class=\"col2\" type=\"text\" placeholder=\"sanatate\" name=\"sanatate\" required>
             </div>
             <div class=\"raw\">
                  <p class=\"col1\"> Rezumatul disutiei: </p>
-                <input class=\"col2\" type=\"text\" placeholder=\"rezumat\" name=\"rezumat\">
+                <input class=\"col2\" type=\"text\" placeholder=\"rezumat\" name=\"rezumat\" required>
             </div>
             <div class=\"statusW\">
                 <button class=\"consemneaza\" name=\"consemneaza\">Consemneaza</button>
             </div>";
+        }
         else if($s["vizita"]["status"] > 0){
             echo"
             <div class=\"raw\">
@@ -214,14 +224,15 @@
                 <p class=\"col1\"> Rezumatul Discutiei: </p>
                 <p class=\"col2\"> ". $s["vizita"]["rezumat"] ." </p>
             </div> 
-            </div>
             <div class=\"statusA\">
                 <p>VIZITA CONSEMNATA!</p>
-            </div>";
+            </div></div>";
+            
             
         }
-    echo count($data["vizite"]);
-
+        echo" </div></form>";
+    
+    }
 
     ?>
 </body>
