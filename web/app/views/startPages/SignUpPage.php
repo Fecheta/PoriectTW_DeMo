@@ -28,7 +28,7 @@
 
 
 
-<form>
+<form action="SignUpPage.php" method="post">
     <div>
     <input class= "inp" type="text" placeholder="First name" required/>
     <input type="text" class="inp" placeholder="Last name" required/><br/>
@@ -108,7 +108,7 @@
                </form>  
     <footer>
         
-        You may receive SMS Notifications from us and can opt out any time.
+        
     </footer>
     <form   action = "/startPages/LoginPage">
     <button  type="submit" name="create">
