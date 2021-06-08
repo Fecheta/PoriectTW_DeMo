@@ -41,6 +41,7 @@
         </div>
     </div>
 
+    <?php 
     foreach ($data["programari"] as $s) {
     
     echo
@@ -219,10 +220,11 @@
             </div>";
             
         }
+    echo count($data["programari"]);
+    echo count($data["vizite"]);
 
 
-
-
+    ?>
 </body>
 
 </html>
