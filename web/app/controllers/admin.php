@@ -171,9 +171,14 @@ class Admin extends Controller{
 }
 public function IstoricVizite($data = []){
     $user = getLoggedInAdmin();
-
+    $db = new Database();
     if ($user) {
-        $db = new Database();
+        if(isset($_POST["consemneaza"])){
+            $view = $this->view('admin/IstoricVizite', array("message"=>"accepted", "id"=>$_POST["idVizita"]));
+            $db->updateVizitaCons($_POST["idVizita"], 1, $oferit,$prmit,$rezumat,$spirit,$sanatate);
+            return;
+        }
+        
         $vizita = $db->getAllVizite();
         $detinut;
         $user1;
