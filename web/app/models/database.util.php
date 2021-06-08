@@ -252,7 +252,7 @@
 
             return $result;
         }
-
+        
         public function makeTop($luna, $ordine, $tip, $categorie){
             $users = $this->getAllUser();
             $list = array();

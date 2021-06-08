@@ -1,6 +1,7 @@
 <?php
 
 include_once __DIR__ . "/../models/auth.util.php";
+require_once __DIR__ . "/../models/database.util.php";
 
 class StartPages extends Controller{
 
@@ -17,9 +18,6 @@ class StartPages extends Controller{
 
     public function SignUpPage($data = []){
         
-       
-        
-
         $firstname;
         $lastname;
         $username;
@@ -58,20 +56,13 @@ class StartPages extends Controller{
              $to = __DIR__ . "/../../public/images/".$poza;
              move_uploaded_file($tempName, $to);
 
-                 
-
-
-
-                $db = new Database();
+            $db = new Database();
                 
                   
-                    $idUser =  $db->registerVizitator($username, $password_enc);
-                    $db->registerUser($idUser, $firstname, $lastname, $birthdata, $poza, $gender);
-                    $view = $this->view('startPages/SignUpPage', array("id"=>$idUser));
+            $idUser =  $db->registerVizitator($username, $password_enc);
+            $db->registerUser($idUser, $firstname, $lastname, $birthdata, $poza, $gender);
+            $view = $this->view('startPages/SignUpPage', array("id"=>$idUser));
                    
-                
-               
-
                 
             } else {
                 $view = $this->view('startPages/SignUpPage',$data);
