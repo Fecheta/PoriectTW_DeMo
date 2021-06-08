@@ -42,7 +42,7 @@
     </div>
 
     <?php 
-    foreach ($data["vizita"] as $s) {
+    foreach ($data["vizite"] as $s) {
     
     echo
     "<div class=\"vizita\">
