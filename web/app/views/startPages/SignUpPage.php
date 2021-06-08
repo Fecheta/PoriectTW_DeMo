@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Sign Up</title>
-    <meta name="description"
-    content = "Logheaza-te" />
+    <meta name="description" content="Logheaza-te" />
     <link rel="stylesheet" href="/public/css/startPages/SignUpPage.css">
 
 </head>
+
 <body>
-<header>
-    <h1>Sign up</h1>
-    <p>It's quick and easy.</p>
-</header>
-     
+    <header>
+        <h1>Sign up</h1>
+        <p>It's quick and easy.</p>
+    </header>
 
 
 
 
-<form action="/startPages/SignUpPage" method="post">
-    <div>
-    <input class= "inp" type="text" placeholder="First name" name="firstname" required/>
-    <input type="text" class="inp" placeholder="Last name" name="lastname" required/><br/>
-    <input type="text" class="inp" placeholder="Username" name="username" required pattern = "^([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3})|(\d{3}\d{3}\d{4})$"/><br/>
-    <input type="password" class="inp" placeholder="New password" name="password" required/>
-    
-   
-       <p class="inp2">Birthday </p>
-       <input type="date" name="birthday" class="inp2">
-        <select class="inp2" id="Month" name= "month" required>
+
+    <form class="reg" action="/startPages/SignUpPage" method="post">
+        <div>
+            <input class="inp" type="text" placeholder="First name" name="firstname" required />
+            <input type="text" class="inp" placeholder="Last name" name="lastname" required /><br />
+            <input type="text" class="inp" placeholder="Username" name="username" required
+                pattern="^([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3})|(\d{3}\d{3}\d{4})$" /><br />
+            <input type="password" class="inp" placeholder="New password" name="password" required />
+
+
+            <p class="inp2">Birthday </p>
+            <input type="date" name="birthday" class="inp2">
+            <!-- <select class="inp2" id="Month" name= "month" required>
             <option value=""  >Month</option>
             <option value="1">Jan</option>
             <option value="2">Feb</option>
@@ -82,40 +84,41 @@
             <option value="27">1995</option> <option value="28">1994</option>
             <option value="29">1993</option> <option value="30">1992</option>
             <option value="31">1991</option>  
-        </select>       
-     
-            <p class="inp2">Gender   </p>
-                
-                    <label class="inp2" for="F">Female</label>
-                    <input type="radio" id="F"
-               name="gender" value="Female" required>
-                 
-                  <label class="inp2" for="M">Male</label>
-                  <input type="radio" id="M"
-               name="gender" value="Male">
-                             
-                  <label class="inp2" for="C">Custom</label>
-                  <input type="radio" id="C"
-               name="gender" value="Custom">
-               </div>
-               </form>  
-    <footer>
+        </select>        -->
+
+           <p class="inp2"> Poza </p>
+           <input id="poza" class="inp2" type="file" name="poza" required>
+           
+            <p class="inp2">Gender </p>
+
+            <label class="inp2" for="F">Female</label>
+            <input type="radio" id="F" name="gender" value="Female" required>
+
+            <label class="inp2" for="M">Male</label>
+            <input type="radio" id="M" name="gender" value="Male">
+
+            <label class="inp2" for="C">Custom</label>
+            <input type="radio" id="C" name="gender" value="Custom">
+            <p class="inp2"> </p>
+            <button class="inp2" name="register" type="submit">
+            Register
+        </button>
+           
+
+        </div >
+       
+   
+
         
-        
-    </footer>
-    <form   action = "/startPages/LoginPage">
-    
-    <button class=\"register\" name=\"register\" type="submit" >
-         Register
-</button>
-    
-</form>
+
+    </form>
+
+   
 
 
-    
 
-    
 
 
 </body>
+
 </html>

@@ -60,9 +60,9 @@ class StartPages extends Controller{
                 }
                
 
-                $view = $this->view('startPages/LoginPage');
+                $view = $this->view('startPages/LoginPage', $data);
             } else {
-                $view = $this->view('startPages/SignUpPage');
+                $view = $this->view('startPages/SignUpPage',$data);
             }
     }
 
