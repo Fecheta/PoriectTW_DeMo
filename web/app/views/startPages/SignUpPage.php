@@ -19,6 +19,17 @@
        if(isset ($_POST['create']))
        {
            echo 'User submitted.';
+           $firstname=$_POST['firstname'];
+           $lastname=$_POST['lastname'];
+           $username = $_POST['username'];
+           $password = $_POST['password'];
+           $year = $_POST['year'];
+           $month =$_POST['month'];
+           $data = $_POST['data'];
+           $gender = $_POST['gender'];
+
+
+
        }
 
 
@@ -30,14 +41,14 @@
 
 <form action="SignUpPage.php" method="post">
     <div>
-    <input class= "inp" type="text" placeholder="First name" required/>
-    <input type="text" class="inp" placeholder="Last name" required/><br/>
-    <input type="text" class="inp" placeholder="Username" required pattern = "^([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3})|(\d{3}\d{3}\d{4})$"/><br/>
-    <input type="password" class="inp" placeholder="New password" required/>
+    <input class= "inp" type="text" placeholder="First name" name="firstname" required/>
+    <input type="text" class="inp" placeholder="Last name" name="lastname" required/><br/>
+    <input type="text" class="inp" placeholder="Username" name="username" required pattern = "^([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3})|(\d{3}\d{3}\d{4})$"/><br/>
+    <input type="password" class="inp" placeholder="New password" name="password" required/>
     
    
        <p class="inp2">Birthday </p>
-        <select class="inp2" id="Month" required>
+        <select class="inp2" id="Month" name= "month" required>
             <option value=""  >Month</option>
             <option value="1">Jan</option>
             <option value="2">Feb</option>
@@ -52,7 +63,7 @@
             <option value="11">Nov</option>
             <option value="12">Dec</option>
         </select>
-        <select class="inp2" id="Date" required>
+        <select class="inp2" id="Date" name="data" required>
             <option value=""  >Date</option>
             <option value="1">1</option> <option value="2">2</option>
             <option value="3">3</option> <option value="4">4</option>
@@ -71,7 +82,7 @@
             <option value="29">29</option> <option value="30">30</option>
             <option value="31">31</option>  
         </select>
-        <select class="inp2" id="Year" required>
+        <select class="inp2" id="Year" name="year" required>
             <option value=""  >Year</option>
             <option value="1">2021</option> <option value="2">2020</option>
             <option value="3">2019</option> <option value="4">2018</option>
@@ -91,7 +102,7 @@
             <option value="31">1991</option>  
         </select>       
      
-            <p class="inp2">Gender  </p>
+            <p class="inp2">Gender   </p>
                 
                     <label class="inp2" for="F">Female</label>
                     <input type="radio" id="F"

@@ -213,12 +213,36 @@
             $stmt->execute();
             $stmt->close();
         }
+<<<<<<< Updated upstream
         public function updateVizitaCons($idVizita, $status, $oferit,$primit,$rezumat,$spirit,$sanatate){
             $stmt = $this->conn->prepare("UPDATE programari SET status = ?, oferit = ?, primit = ?, rezumat = ?, spirit = ?, sanatate = ? WHERE id_vizita = ?");
             $stmt->bind_param("isssssi",  $status, $oferit,$primit,$rezumat,$spirit,$sanatate,$idVizita);
             $stmt->execute();
             $stmt->close();
         }
+=======
+
+        public function registerVizitator ($idVizitator, $username, $password, $idUser )
+        {
+            $stmt = $this->conn->prepare("INSERT INTO cont_vizitator VALUES( ? , ? , ? , ?)");
+            $stmt->bind_param("isi", $idVizitator, $username ,$password, $idUser);
+            $stmt->execute();
+            $stmt->close();
+        }
+
+
+        public function registerUser ($idUser, $firstname, $lastname, $CNP, $birthdata, $varsta, $photo, $gen )
+        {
+            $stmt = $this->conn->prepare("INSERT INTO cont_vizitator VALUES( ? , ? , ? , ?, ?, ?, ?, ?)");
+            $stmt->bind_param("isi", $idUser, $firstname ,$lastname, $CNP, $birthdata, $varsta, $photo, $gen );
+            $stmt->execute();
+            $stmt->close();
+        }
+
+
+
+
+>>>>>>> Stashed changes
 
 
     }
