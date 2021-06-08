@@ -72,6 +72,10 @@ h2{
 
 }
 
+.subpunct img{
+    width: 100%;
+}
+
 .subpunct p{
     font-size: 1.2em;
     font-family: sans-serif;}
