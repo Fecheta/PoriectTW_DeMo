@@ -1,4 +1,4 @@
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,7 +6,7 @@ body{
     background-color: rgba(0, 87, 7, 0.5);
 }
 
-.programare{
+.programare {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
     transition: 0.3s;
     /* border: 1px solid black; */
@@ -17,7 +17,7 @@ body{
     margin: 1em 0;
 }
 
-.programare .edit{
+.programare .edit {
     padding: 5px 5px;
     font-size: 2em;
     position: absolute;
@@ -25,12 +25,12 @@ body{
     right: 0%;
 }
 
-.programare .edit:hover{
+.programare .edit:hover {
     background-color: darkgrey;
     color: black;
 }
 
-.raw{
+.raw {
     display: flex;
     flex-direction: row;
     /* padding: 0 1em; */
@@ -41,7 +41,7 @@ body{
     justify-content: start;
 }
 
-.col1{
+.col1 {
     display: flex;
     flex-direction: column;
     float: left;
@@ -49,22 +49,22 @@ body{
     padding: 0 1em;
 }
 
-.col2{
+.col2 {
     display: flex;
     flex-direction: column;
     margin-left: 2em;
     padding: 0 1em;
 }
 
-.userArea .raw{
-    background-color:lightsteelblue;
+.userArea .raw {
+    background-color: lightsteelblue;
 }
 
-.userArea .col2{
-    margin:unset;
+.userArea .col2 {
+    margin: unset;
 }
 
-.raw .col{
+.raw .col {
     width: 100%;
     background-color: rgb(119, 132, 149);
     margin: unset;
@@ -74,29 +74,30 @@ body{
     height: 100%;
 }
 
+
 /* .userArea{
     border: 3px solid rgb(88, 88, 88);
 } */
 
-.userCard{
+.userCard {
     border-top: 1px solid rgb(0, 0, 0);
     /* border-bottom: 1px solid rgb(0, 0, 0); */
 }
 
-.img{
+.img {
     width: 9em;
     background-color: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color:rgb(140, 155, 175);
+    background-color: rgb(140, 155, 175);
     /* display: flex;
     flex-direction: column; */
     float: left;
 }
 
-.titluIstoric{
+.titluIstoric {
     background-color: rgb(184, 174, 153);
     width: 100%;
     margin: unset;
@@ -106,15 +107,17 @@ body{
     height: 100%;
 }
 
-.programare .detalii .raw:nth-child(2n-1){
-    background-color:rgb(255, 245, 226);
+.programare .detalii .raw:nth-child(2n-1) {
+    background-color: rgb(255, 245, 226);
 }
 
-.programare .detalii .userArea .raw:nth-child(2n-1){
-    background-color:rgb(140, 155, 175);
+.programare .detalii .userArea .raw:nth-child(2n-1) {
+    background-color: rgb(140, 155, 175);
 }
 
-.statusW, .statusR, .statusA{
+.statusW,
+.statusR,
+.statusA {
     /* border-top: 1px solid black; */
     padding: 0 0.5em;
     text-align: center;
@@ -124,25 +127,23 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.statusR{
+.statusR {
     background-color: rgb(228, 117, 117);
 }
 
-.statusA{
+.statusA {
     background-color: rgb(95, 177, 95);
 }
 
-@media screen and (max-width: 800px){
-    .programare{
+@media screen and (max-width: 800px) {
+    .programare {
         width: 90%;
     }
-
-    .raw{
+    .raw {
         height: 2.5em;
         font-size: 1em;
     }
-
-    .img{
+    .img {
         width: 7.5em;
     }
 }

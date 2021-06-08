@@ -18,6 +18,61 @@ class StartPages extends Controller{
     public function SignUpPage($data = []){
         
         $view = $this->view('startPages/SignUpPage',$data);
+        
+
+        $firstname;
+        $lastname;
+        $username;
+        $password;
+        $year;
+        $month;
+        $data;
+        $gender;
+        global $idVizitator;
+        global $idUser;
+
+       
+            if( isset($_POST["firstname"]) && isset($_POST["lastname"]) &&
+                isset($_POST["password"]) && isset($_POST["year"]) &&
+                isset($_POST["month"]) && isset($_POST["data"]) &&
+                isset($_POST["gender"]) )
+            {
+
+             $firstname=$_POST['firstname'];
+             $lastname=$_POST['lastname'];
+             $username = $_POST['username'];
+             $password = $_POST['password'];
+             $year = $_POST['year'];
+             $month =$_POST['month'];
+             $data = $_POST['data'];
+             $gender = $_POST['gender'];
+                 
+
+
+
+                $db = new Database();
+                if(isset($_POST["register"])){
+                    $view = $this->view('startPages/LoginPage');
+                    $idUser =  $db->registerVizitator($idVizitator, $username, $password, $idUser);
+                    $db->registerUser($idUser, $firstname, $lastname, $CNP, $birthdata, $varsta, $photo, $gen);
+
+                    return;
+                }
+               
+
+                $view = $this->view('startPages/LoginPage');
+            } else {
+                $view = $this->view('startPages/SignUpPage');
+            }
+    }
+        }
+
+
+
+
+
+
+
     }
 
     public function LoginPageAdmin($data = []){

@@ -11,9 +11,7 @@ class Admin extends Controller{
         $view = $this->view('admin/index',$data);
     }
 
-    public function IstoricVizite($data = []){
-        $view = $this->view('admin/IstoricVizite', $data);
-    }
+
     
 
     public function AdaugaDetinut($data = []){
@@ -170,6 +168,59 @@ class Admin extends Controller{
 
         $view = $this->view('admin/vizita', $res);
     }
+
+public function IstoricVizite($data = []){
+    /*$oferit;
+    $primit;
+    $rezumat;
+    $spirit;
+    $sanatate;*/
+    $user = getLoggedInAdmin();
+    $db = new Database();
+    if ($user) {
+        $oferit= isset($_POST["oferit"]) ? $_POST["oferit"] : null; 
+        $primit = isset($_POST["primit"]) ? $_POST["primit"] : null; 
+        $rezumat = isset($_POST["rezumat"]) ? $_POST["rezumat"] : null; 
+        $spirit = isset($_POST["spirit"]) ? $_POST["spirit"] : null; 
+        $sanatate = isset($_POST["sanatate"]) ? $_POST["sanatate"] : null;
+        /*if( isset($_POST["oferit"]) && isset($_POST["primit"]) &&
+                isset($_POST["rezumat"]) && isset($_POST["spirit"]) &&
+                isset($_POST["sanatate"])){
+                $oferit = $_POST["oferit"];
+                $primit = $_POST["primit"];
+                $rezumat = $_POST["rezumat"];
+                $spirit = $_POST["spirit"];
+                $sanatate = $_POST["sanatate"];*/
+        if(isset($_POST["consemneaza"])){
+            $view = $this->view('admin/IstoricVizite', array("message"=>"accepted", "id"=>$_POST["idVizita"]));
+            $db->updateVizitaCons($_POST["idVizita"],  1,$oferit,$primit,$rezumat,$spirit,$sanatate);
+            return;
+        }
+        
+        $vizita = $db->getAllVizite();
+        $detinut;
+        $user1;
+        $user2;
+        $user3;
+        $resultVis;
+
+
+        while($row = $vizita->fetch_assoc()){
+            $detinut = $db->findDetinutById($row["id_detinut"]);
+            $user1 = $db->findUserById($row["id_user1"]);
+            $user2 = $db->findUserById($row["id_user2"]);
+            $user3 = $db->findUserById($row["id_user3"]);
+
+            $resultVis[] = ["vizita"=>$row, "detinut"=>$detinut, "user1"=>$user1, "user2"=>$user2, "user3"=>$user3];
+        }
+
+        $view = $this->view('admin/IstoricVizite', array( "vizite"=>$resultVis, "user"=>$user));
+    } else {
+        $view = $this->view("startPages/LoginPageAdmin", $data);
+        header("Location: /startPages/LoginPageAdmin");
+    }
+
+}
 }
 
 ?>
