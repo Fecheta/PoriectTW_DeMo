@@ -193,8 +193,8 @@ public function IstoricVizite($data = []){
 
         $view = $this->view('admin/IstoricVizite', array( "vizite"=>$resultVis, "user"=>$user));
     } else {
-        $view = $this->view("startPages/LoginPageAdministrator", $data);
-        header("Location: /startPages/LoginPageAdministrator");
+        $view = $this->view("startPages/LoginPageAdmin", $data);
+        header("Location: /startPages/LoginPageAdmin");
     }
 }
 
