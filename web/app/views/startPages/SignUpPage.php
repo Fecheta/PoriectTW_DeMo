@@ -20,7 +20,7 @@
 
 
 
-<form action="SignUpPage.php" method="post">
+<form action="/startPages/SignUpPage" method="post">
     <div>
     <input class= "inp" type="text" placeholder="First name" name="firstname" required/>
     <input type="text" class="inp" placeholder="Last name" name="lastname" required/><br/>
@@ -29,6 +29,7 @@
     
    
        <p class="inp2">Birthday </p>
+       <input type="date" name="birthday" class="inp2">
         <select class="inp2" id="Month" name= "month" required>
             <option value=""  >Month</option>
             <option value="1">Jan</option>
