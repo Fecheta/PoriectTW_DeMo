@@ -21,7 +21,7 @@
             <a id="istoric" href="/vizitator/istoric">Istoric vizite</a>
             <a id="add" href="/vizitator/viziteaza">Adauga vizita</a>
             <a id="verifica" href="/vizitator/cauta" class="activate">Cauta Detinut</a>
-            <a id="about" href="/raport/index">Despre</a>
+            <a id="about" href="/vizitator/despre">Despre</a>
             <div id="userManagePhone" class="extraResponsive">
                 <a id="logoutP" href="../../StartPage/html/p1.html">Schimba cont</a>
                 <a id="modifyP" href="#change_account_data">Modifica cont</a>

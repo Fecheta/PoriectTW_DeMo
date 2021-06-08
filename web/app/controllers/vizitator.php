@@ -92,7 +92,14 @@ class Vizitator extends Controller{
     }
 
     public function despre($data = []){
-        $view = $this->view('vizitator/despre', $data);
+        $user = getLoggedInUser();
+
+        if ($user) {
+            $view = $this->view('vizitator/despre', array("user"=>$user));
+        } else {
+            $view = $this->view("startPages/LoginPage", $data);
+            header("Location: /startPages/LoginPage");
+        }
     }
 
     public function profil($data = []){
@@ -106,7 +113,23 @@ class Vizitator extends Controller{
     }
 
     public function statistics($data = []){
-        $view = $this->view('vizitator/statistics', $data);
+        $user = getLoggedInUser();
+
+        if ($user) {
+            $luna = isset($_POST["mounth"]) ? $_POST["mounth"] : 12;
+            $ordinea = isset($_POST["order"]) ? $_POST["order"] : "ASC";
+            $tip = isset($_POST["type"]) ? $_POST["type"] : "json";
+            $categorie = isset($_POST["chategory"]) ? $_POST["chategory"] : 1;
+
+            $db = new Database();
+            $result=$db->makeTop($luna, $ordinea, $tip, $categorie);
+            // print_r($result);
+
+            $view = $this->view('vizitator/statistics', array("top"=>$result, "type"=>$tip));
+        } else {
+            $view = $this->view("startPages/LoginPage", $data);
+            header("Location: /startPages/LoginPage");
+        }
     }
 }
 

@@ -214,6 +214,40 @@
             $stmt->close();
         }
 
+        public function getAllUser(){
+            $stmt = $this->conn->prepare("SELECT * FROM user");
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $stmt->close();
+
+            return $result;
+        }
+
+        public function makeTop($luna, $ordine, $tip, $categorie){
+            $users = $this->getAllUser();
+            $list = array();
+
+            while ($row = $users->fetch_assoc()) {
+                $stmt = $this->conn->prepare("SELECT * FROM vizite WHERE (id_user1 = ? OR id_user2 = ? OR id_user3 = ?) AND (data > current_date - INTERVAL ? MONTH)");
+                $stmt->bind_param("iiii", $row["id_user"], $row["id_user"], $row["id_user"], $luna);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                $nr = $result->num_rows;
+                $stmt->close();
+
+                $list[] = array("id"=>$row["id_user"], "nume"=>$row["first_name"], "prenume"=>$row["last_name"], "poza"=>$row["photo"], "nr_vizite"=>$nr);
+            }
+
+            $nr_vizite = array_column($list, 'nr_vizite');
+            if ($ordine === "DESC") {
+                array_multisort($nr_vizite, SORT_ASC, $list);
+            } else {
+                array_multisort($nr_vizite, SORT_DESC, $list);
+            }
+            return $list;
+
+        }
+
 
 
     }

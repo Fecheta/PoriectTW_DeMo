@@ -9,17 +9,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/public/css/vizitator/cauta.css">
     <link rel="stylesheet" href="/public/css/vizitator/index.css">
+    <link rel="stylesheet" href="/public/css/vizitator/despre.css">
     <script src="/public/javaScript/topnav.js"></script>
 </head>
-<body class="st">
-
+<body>
+    
     <div class="fullTopnav">
         <div id="myTopnav" class="topnav">
-            <a id="home" href="/vizitator/index" class="activate">Home</a>
+            <a id="home" href="/vizitator/index">Home</a>
             <a id="istoric" href="/vizitator/istoric">Istoric vizite</a>
             <a id="add" href="/vizitator/viziteaza">Adauga vizita</a>
             <a id="verifica" href="/vizitator/cauta">Cauta Detinut</a>
-            <a id="about" href="/vizitator/despre">Despre</a>
+            <a id="about" href="/vizitator/despre" class="activate">Despre</a>
             <div id="userManagePhone" class="extraResponsive">
                 <a id="logoutP" href="../../StartPage/html/p1.html">Schimba cont</a>
                 <a id="modifyP" href="#change_account_data">Modifica cont</a>
@@ -41,18 +42,25 @@
         </div>
     </div>
 
-    <?php
-        echo "
-            <label class=\"firstText\"> Bine ai revenit ". $data["user"]->name ." </label>
-        "
-    ?>
-
-    <div class="test">
-        <a href="/vizitator/viziteaza">
-            <i class="fa fa-plus"></i>
-        </a>
-        <p>Viziteaza pe cineva</p>
+    <div class="aboutAll">
+        <div class="testAbout">
+            <a href="/raport/index">
+                <i class="fa fa-file"></i>
+            </a>
+            <p>Manual Utilizare (Raport)</p>
+        </div>
+        <div class="testAbout">
+            <a href="/raport/tehnic">
+                <i class="fa fa-file"></i>
+            </a>
+            <p>Manual Tehnic</p>
+        </div>
+        <div class="testAbout">
+            <a href="/vizitator/statistics">
+                <i class="fa fa-bars"></i>
+            </a>
+            <p>Statistici</p>
+        </div>
     </div>
-
 </body>
 </html>

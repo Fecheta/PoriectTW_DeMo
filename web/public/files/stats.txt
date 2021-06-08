@@ -1,0 +1,153 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <style>
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .topCard{
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        margin-bottom: 1em;
+        width: 40%;
+        background-color: aliceblue;
+        height: 7em;
+        box-shadow: 3px 3px 10px rgb(92, 92, 92);
+    }
+    .nr0, .nr1{
+        background-color: rgb(162, 212, 255);
+        width: 60%;
+        height: 100%;
+        border-radius: unset;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .nr1{
+        background-color: rgb(145, 186, 223);
+    }
+    
+    .topCard img{
+        width: 7em;
+        background-color: rgb(194, 226, 255);
+        display:none;
+    }
+    
+    .corner{
+        background-color:rgb(226, 204, 147);
+        color: rgb(0, 0, 0);
+        font-size: 4em;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 20%;
+    }
+    
+    .topTitle{
+        /* border: 1px solid black; */
+        font-size: 3em;
+        margin-top: 0.5em;
+    }
+    </style>
+        
+            <title>Statistics</title>
+        </head>
+        <body>
+        <span class="topTitle"> Top </span>
+        <div class="topCard">
+            <span class="corner">#1</span>
+            <img src="/public/images/userM1.png" alt="userPhoto">
+            <span class="nr0">Laparnaie Daniel( #1 )</span>
+            <span class="nr1">2 Vizite</span>
+        </div>
+        <div class="topCard">
+            <span class="corner">#2</span>
+            <img src="/public/images/userM2.png" alt="userPhoto">
+            <span class="nr0">Ionescu Grigore( #3 )</span>
+            <span class="nr1">2 Vizite</span>
+        </div>
+        <div class="topCard">
+            <span class="corner">#3</span>
+            <img src="/public/images/userG1.png" alt="userPhoto">
+            <span class="nr0">Turcanu Aurica( #2 )</span>
+            <span class="nr1">1 Vizite</span>
+        </div>
+        <div class="topCard">
+            <span class="corner">#4</span>
+            <img src="/public/images/userM1.png" alt="userPhoto">
+            <span class="nr0">Georgescu Ion( #4 )</span>
+            <span class="nr1">1 Vizite</span>
+        </div>
+        <div class="topCard">
+            <span class="corner">#5</span>
+            <img src="/public/images/userG1.png" alt="userPhoto">
+            <span class="nr0">Matache Mihaela( #5 )</span>
+            <span class="nr1">1 Vizite</span>
+        </div>
+        <div class="topCard">
+            <span class="corner">#6</span>
+            <img src="/public/images/userG2.png" alt="userPhoto">
+            <span class="nr0">Iftime Ionela( #6 )</span>
+            <span class="nr1">1 Vizite</span>
+        </div>
+        <div class="topCard">
+            <span class="corner">#7</span>
+            <img src="/public/images/userG2.png" alt="userPhoto">
+            <span class="nr0">Mihai Georgiana( #7 )</span>
+            <span class="nr1">1 Vizite</span>
+        </div>
+        <div class="topCard">
+            <span class="corner">#8</span>
+            <img src="/public/images/userM1.png" alt="userPhoto">
+            <span class="nr0">Ionescu Ionut( #8 )</span>
+            <span class="nr1">1 Vizite</span>
+        </div>
+        <div class="topCard">
+            <span class="corner">#9</span>
+            <img src="/public/images/userM2.png" alt="userPhoto">
+            <span class="nr0">Blaj Grigore( #9 )</span>
+            <span class="nr1">1 Vizite</span>
+        </div>
+        <div class="topCard">
+            <span class="corner">#10</span>
+            <img src="/public/images/userM1.png" alt="userPhoto">
+            <span class="nr0">Istoc Madalin( #10 )</span>
+            <span class="nr1">1 Vizite</span>
+        </div>
+        <div class="topCard">
+            <span class="corner">#11</span>
+            <img src="/public/images/userM2.png" alt="userPhoto">
+            <span class="nr0">Hugianu Eduard( #11 )</span>
+            <span class="nr1">1 Vizite</span>
+        </div>
+        <div class="topCard">
+            <span class="corner">#12</span>
+            <img src="/public/images/userM1.png" alt="userPhoto">
+            <span class="nr0">Antoci Grigore( #12 )</span>
+            <span class="nr1">1 Vizite</span>
+        </div>
+        <div class="topCard">
+            <span class="corner">#13</span>
+            <img src="/public/images/userM2.png" alt="userPhoto">
+            <span class="nr0">Androni Vasile( #13 )</span>
+            <span class="nr1">1 Vizite</span>
+        </div>
+        <div class="topCard">
+            <span class="corner">#14</span>
+            <img src="/public/images/userM1.png" alt="userPhoto">
+            <span class="nr0">Fecheta Virgil-Vicentiu( #0 )</span>
+            <span class="nr1">0 Vizite</span>
+        </div></body></html>
