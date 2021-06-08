@@ -15,26 +15,7 @@
     <h1>Sign up</h1>
     <p>It's quick and easy.</p>
 </header>
-     <div><?php 
-       if(isset ($_POST['create']))
-       {
-           echo 'User submitted.';
-           $firstname=$_POST['firstname'];
-           $lastname=$_POST['lastname'];
-           $username = $_POST['username'];
-           $password = $_POST['password'];
-           $year = $_POST['year'];
-           $month =$_POST['month'];
-           $data = $_POST['data'];
-           $gender = $_POST['gender'];
-
-
-
-       }
-
-
-     ?>
-     </div>
+     
 
 
 
@@ -122,10 +103,14 @@
         
     </footer>
     <form   action = "/startPages/LoginPage">
-    <button  type="submit" name="create">
+    
+    <button class=\"register\" name=\"register\" type="submit" >
          Register
 </button>
+    
 </form>
+
+
     
 
     
