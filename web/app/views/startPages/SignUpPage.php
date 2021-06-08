@@ -15,6 +15,16 @@
     <h1>Sign up</h1>
     <p>It's quick and easy.</p>
 </header>
+     <div><?php 
+       if(isset ($_POST['create']))
+       {
+           echo 'User submitted.';
+       }
+
+
+     ?>
+     </div>
+
 
 
 
@@ -101,7 +111,7 @@
         You may receive SMS Notifications from us and can opt out any time.
     </footer>
     <form   action = "/startPages/LoginPage">
-    <button  type="submit">
+    <button  type="submit" name="create">
          Register
 </button>
 </form>
