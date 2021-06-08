@@ -223,7 +223,7 @@
         public function registerVizitator ($username, $password)
         {   $id = rand(10, 1000);
             
-            $stmt = $this->conn->prepare("INSERT INTO cont_vizitator VALUES( ? , ? , ? , ? )");
+            $stmt = $this->conn->prepare("INSERT INTO cont_vizitator (id_vizitator,username,password,id_user) VALUES( ? , ? , ? , ? )");
             $stmt->bind_param("issi", $id, $username ,$password, $id);
             $stmt->execute();
             $stmt->close();
