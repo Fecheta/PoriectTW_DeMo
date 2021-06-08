@@ -49,7 +49,7 @@
 
         <div class=\"detalii\">
             <div class=\"raw\">
-                <label class=titluIstoric> Programare #". $s["vizite"]["id_vizita"] ."</label>
+                <label class=titluIstoric>  Vizita #". $s["vizite"]["id_vizita"] ."</label>
             </div>
             <div class=\"userArea\">
                 <div class=\"raw\">
@@ -145,22 +145,22 @@
 
             <div class=\"raw\">
                 <p class=\"col1\"> Data Programarii: </p>
-                <p class=\"col2\"> ". $s["programare"]["data"] ."</p>
+                <p class=\"col2\"> ". $s["vizita"]["data"] ."</p>
             </div>
 
             <div class=\"raw\">
                 <p class=\"col1\"> Ora Vizitei: </p>
-                <p class=\"col2\"> ". $s["programare"]["ora"] ." </p>
+                <p class=\"col2\"> ". $s["vizita"]["ora"] ." </p>
             </div>
 
             <div class=\"raw\">
                 <p class=\"col1\"> Relatia: </p>
-                <p class=\"col2\"> ". $s["programare"]["relatia_cu_detinutul"] ." </p>
+                <p class=\"col2\"> ". $s["vizita"]["relatia_cu_detinutul"] ." </p>
             </div>
 
             <div class=\"raw\">
                 <p class=\"col1\"> Scopul Vizitei: </p>
-                <p class=\"col2\"> ". $s["programare"]["natura_vzitei"] ." </p>
+                <p class=\"col2\"> ". $s["vizita"]["natura_vzitei"] ." </p>
             </div>;
             <div class=\"raw\">
                 <p class=\"col1\"> Durata vizitei: </p>
