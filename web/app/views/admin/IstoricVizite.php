@@ -41,7 +41,12 @@
         </div>
     </div>
 
-    <?php 
+    <?php
+    if (isset($data["message"]))
+    {
+        echo "Am consemnat";
+        return;
+    }
     foreach ($data["vizite"] as $s) {
     
     echo

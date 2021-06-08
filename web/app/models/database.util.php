@@ -214,7 +214,7 @@
             $stmt->close();
         }
         public function updateVizitaCons($idVizita, $status, $oferit,$primit,$rezumat,$spirit,$sanatate){
-            $stmt = $this->conn->prepare("UPDATE programari SET status = ?, oferit = ?, primit = ?, rezumat = ?, spirit = ?, sanatate = ? WHERE id_vizita = ?");
+            $stmt = $this->conn->prepare("UPDATE vizite SET status = ?, oferit = ?, primit = ?, rezumat = ?, stare_de_spirit = ?, stare_de_sanatate = ? WHERE id_vizita = ?");
             $stmt->bind_param("isssssi",  $status, $oferit,$primit,$rezumat,$spirit,$sanatate,$idVizita);
             $stmt->execute();
             $stmt->close();
@@ -252,7 +252,7 @@
 
             return $result;
         }
-        
+
         public function makeTop($luna, $ordine, $tip, $categorie){
             $users = $this->getAllUser();
             $list = array();
