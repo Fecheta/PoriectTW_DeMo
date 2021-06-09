@@ -12,7 +12,6 @@
 <body class="pagina">
     <div class="bar">
         <button class="back" onclick="history.go(-1);"> &lt; BACK </button>
-        <!-- <a href="../StartPage/html/p1.html" class="back"> &lt; BACK </a> -->
         <div class="rezultatTitlu">
             <p>RAPORT</p>
         </div>
@@ -98,28 +97,72 @@
 
         <div class="subpunct">
             <h2> 2.2 Modul de functionare </h2>
-            <p>
+            <p>>
+            <img src="/../../public/images/start.png" alt="start">
+          
+                Daca esti un utilizator nou, va trebui sa iti creezi un cont,
+                completand formularul cu datele personale. Pagina de SignUp contine campuri de tip text,
+                 in care utilizatorul trebuie sa-si introduca datele personale 
+                 pentru a obtine un cont pentru aplicatia pe care am dezvoltat-o
+                <img src="/../../public/images/signup.png" alt="start">
+                Dupa crearea contului, il poti folosi pentru a te loga si a 
+                beneficia de toate optiunile unui vizitator.
+                Utilizatorul va avea de completat 2 campuri
+                care fac referire la adresa/nr de telefon si parola aferenta contului, 
+                dupa care va putea sa apese butonul de login, pentru logarea efectiva 
+                <img src="/../../public/images/login.png" alt="start">
                 <b>Dupa logarea ca vizitator ai urmatoarele optiuni:</b>
+                <img src="/../../public/images/advizita.png" alt="start">
                 <br>
                 - sa iti faci o programare pentru vizitarea unui detinut;
                 <br>
-                - sa verifici programarile facute de tine in trecut;
+                - sa verifici programarile facute de tine in trecut, si sa vezi 
+                statusul lor:
+                -acceptata:
+                <img src="/../../public/images/vizit.png" alt="start">
+                -consemnata (dupa efectuarea vizitei, un administrator trebuie sa 
+                relateze cum a decurs vizita)
+                <img src="/../../public/images/cons.png" alt="start">
+                -respinsa(nu poti efectua vizita, din diferite motive):
+                <img src="/../../public/images/res.png" alt="start">
                 <br>
+                
                 - sa cauti informatii despre un detinut.
+                <img src="/../../public/images/caudet.png" alt="start">
+                <img src="/../../public/images/detalii.png" alt="start">
                 <br><br>
+                <b>Sau ai optiunea de a te loga cu un cont de admin:</b>
+                - pagina de Login as Administrator este exclusiv pentru administratorul 
+                penitenciarului care va trebui sa introduca in campurile prezente email-ul
+                 care i-a fost atribuit, respectiv parola; </b>
+                <img src="/../../public/images/admin.png" alt="start">
                 <b> Dupa logarea ca admin ai urmatoarele optiuni: </b>
                 <br>
-                - sa verifici istoricul vizitelor efectuate deja;
+                - sa verifici istoricul vizitelor efectuate deja, pe care
+                ai optiunea sa le consemnezi;
+                <img src="/../../public/images/consemneaza.png" alt="start">
+                -iar dupa ce le consemnezi ele vor aparea ca vizite consemnate;
+                <img src="/../../public/images/consemnat.png" alt="start">
                 <br>
-                - sa vizualizezi ce programari sunt facute;
+                - sa vizualizezi ce programari sunt facute, pe care ai optiunea de 
+                a le accepta sau respinge;
+                <img src="/../../public/images/optiune.png" alt="start">
+                -daca accepti o programare, ea va aparea ca programare aprobata;
+                <img src="/../../public/images/acc.png" alt="start">
+                -daca respingi o progamare, trebuie sa ii dai un motiv si va apare
+                ca programare respinsa;
+                <img src="/../../public/images/respinss.png" alt="start">
                 <br>
-                - sa vizualizezi informatii despre toti detinutii;
+                - sa cauti un detinut;
+                <img src="/../../public/images/caudet.png" alt="start">
+                -sa vizualizezi informatii despre acesta;
+                <img src="/../../public/images/detalii.png" alt="start">
                 <br>
-                - sa vizualizezi date despre contul tau.
+                - sa adaugi un detinut;
+                <img src="/../../public/images/adauga1.png" alt="start">
+                <img src="/../../public/images/adauga2.png" alt="start">
                 <br><br>
-                    Daca doresti sa iti creezi un cont, ai optiunea "REGISTER", unde
-                iti poti crea un cont, dupa care vei fi redirectionat pe pagina
-                de login pentru a te loga.
+                
             </p>
         </div>
 
@@ -133,121 +176,7 @@
                 mai sus.
             </p>
         </div>
-
-        <div class="titlu">
-            <h1> 4. IMPLEMENTARI VIITOARE </h1>
-        </div>
-
-        <div class="subpunct">
-            <h2> 4.1 Register </h2>
-            <p>
-                Momentan pagina de autentificare nu poate crea un cont pe 
-                care il poti folosi sa te loghezi. Poti apasa pe butonul register
-                si vei fi redirectionat catre pagina de login fara sa completezi
-                campurile necesare crearii contului. 
-            </p>
-        </div>
-
-        <div class="subpunct">
-            <h2> 4.2 Login </h2>
-            <p>
-                Nu este obligatoriu sa completezi campurile de pe paginile de
-                login ca vizitator sau ca admin cu un cont valid,  dar vom 
-                implementa acest lucru.
-            </p>
-        </div>
-
-        <div class="subpunct">
-            <h2> 4.3 Cont </h2>
-            <p>
-                Vom adauga optiuni de Schimba cont, Schimba parola pentru
-                paginile de login ca vizitator cat si pentru cea de administrator.
-            </p>
-        </div>
-
-        <div class="subpunct">
-            <h2> 4.4 Vizite </h2>
-            <p>
-                Vom implementa functionalitatea ca vizitatorul sa isi pota programa
-                o vizita, sa poata cauta un anumit detinut si sa isi vada istoricul 
-                vizitelor facute anterior
-            </p>
-        </div>
-
-        <div class="subpunct">
-            <h2> 4.5 Admin </h2>
-            <p>
-                Vom da posibilitatea persoaneicare are cont de administrator de a gestiona
-                programarile facute de vizitatori.
-            </p>
-        </div>
-
-        <div class="titlu">
-            <h1> 5. INTERFATA GRAFICA </h1>
-        </div>
-
-        <div class="subpunct">
-            <h2> 5.1 Paginile de start </h2>
-            <p>
-                Pentru interfata grafica a proiectului am folosit HTML5. 
-                Astfel utilizatorul aplicatiei are la dispozitie urmatoarele functionalitati :
-                <br><br>
-                - pagina principala cu butoane de Login, SignUp si Login as Administrator;
-                <br>
-                - pagina de Login in care utilizatorul va avea de completat 2 campuri
-                care fac referire la adresa/nr de telefon si parola aferenta contului, 
-                dupa care va putea sa apese butonul de login, pentru logarea efectiva 
-                <br>
-                - pagina de SignUp contine campuri de tip text, in care utilizatorul trebuie sa-si 
-                introduca datele personale pentru a obtine un cont pentru aplicatia pe care am dezvoltat-o
-                <br>
-                - pagina de Login as Administrator este exclusiv pentru administratorul penitenciarului 
-                care va trebui sa introduca in campurile prezente email-ul care i-a fost atribuit, respectiv parola; 
-                <br>
-            </p>
-        </div>
-
-        <div class="subpunct">
-            <h2> 5.2 Paginile Administratorului </h2>
-            <p>
-                Paginile corespunzatoare contului de administrator ,
-                pe care acesta le poate accesa din bara de navigatie:
-                <br><br>
-                - Home,
-                <br>
-                - Istoric Vizite ( unde administratorul poate vedea intr-un
-                tabel vizitele realizate pana la momentul actual),
-                <br>
-                - Programari ( administratorul are la dispozitie un tabel in care
-                se stocheaza informatiile referitoare la vizitele viitoare)
-                <br>
-                - Vizualizare detinuti ( o pagina cu profilul detinutilor ), 
-                <br>
-                - Detalii cont ( o pagina ce contine informatiile personale ale administratorului).
-            </p>
-        </div>
-
-        <div class="subpunct">
-            <h2> 5.3 Paginile Vizitatorului </h2>
-            <p>
-                Paginile corespunzatoare vizitatorului sunt urmatoarele:
-                <br><br>
-                - adauga vizita ( unde vizitatorul trebuie sa completeze campurile cu
-                referire la datele personale si la datele intalnirii (ora, data), respectiv grad
-                de rudenie cu detinutul cu care vizitatorul doreste sa programeze o intalnire,
-                <br>
-                - pagina Cauta Detinut unde vizitatorul cauta in baza de date a penitenciarului,
-                un anumit detinut ( completand campurile : nume, prenume, cnp si cod unic detinut ),
-                <br>
-                - pagina Istoric vizite ( in care prin intermediul mai multor tabele,
-                vizitatorul poate vedea vizitele deja programate), 
-                <br>
-                - pagina Home ( vizitatorul poate adauga o vizita), 
-                <br>
-                - pagina Despre (vizitatorul va putea citi functionalitatile aplicatiei DeMo)
-            </p>
-        </div>
-
+                
         <div class="titlu">
             <h1> BIBLIOGRAFIE</h1>
         </div>
