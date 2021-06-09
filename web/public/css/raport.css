@@ -1,11 +1,11 @@
-.pagina{
+.pagina {
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
 }
 
-.head{
+.head {
     width: 40%;
     /* border: 1px solid rgba(0, 0, 0, 0.2); */
     font-size: 3em;
@@ -14,7 +14,7 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.autori{
+.autori {
     width: 40%;
     /* border: 1px solid black; */
     font-family: sans-serif;
@@ -24,35 +24,35 @@
     text-decoration: none;
 }
 
-.autori .space{
+.autori .space {
     /* border: 1px solid black; */
     width: 50%;
 }
 
-.autori a{
+.autori a {
     color: black;
     text-decoration: none;
 }
 
-.autori ul:hover{
+.autori ul:hover {
     background-color: darkgray;
 }
 
-.autori h3{
+.autori h3 {
     margin: unset;
 }
 
-.sectiune h1{
-    font-family:Arial, Helvetica, sans-serif;
+.sectiune h1 {
+    font-family: Arial, Helvetica, sans-serif;
     margin-top: 1em;
     margin-bottom: 0.25em;
 }
 
-h2{
+h2 {
     font-family: sans-serif;
 }
 
-.sectiune{
+.sectiune {
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
@@ -63,48 +63,43 @@ h2{
     color: rgba(0, 0, 0, 0.8);
 }
 
-.sectiune .titlu{
+.sectiune .titlu {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.sectiune .subpunct{
+.sectiune .subpunct {
     margin-top: 1.5em;
-
 }
 
-.subpunct img{
+.subpunct img {
     width: 100%;
 }
 
-.subpunct p{
+.subpunct p {
     font-size: 1.2em;
-    font-family: sans-serif;}
+    font-family: sans-serif;
+}
 
-@media screen and (max-width: 800px){
-    .sectiune{
+@media screen and (max-width: 800px) {
+    .sectiune {
         width: 95%;
         font-size: 1em;
     }
-
-    .head{
+    .head {
         width: 90%;
         font-size: 2.5em;
         margin-bottom: 1em;
     }
-
-    .autori{
+    .autori {
         width: 90%;
     }
-
-    .autori .space{
+    .autori .space {
         display: none;
     }
-
-    .sectiune .subpunct h2{
+    .sectiune .subpunct h2 {
         font-size: 1.25em;
     }
-
-    .sectiune .titlu h1{
-        font-size:1.4em;
+    .sectiune .titlu h1 {
+        font-size: 1.4em;
     }
 }
