@@ -61,7 +61,7 @@ class StartPages extends Controller{
             // $idUser =$db->registerVizitator($username, $password_enc);
             // $db->registerUser($idUser, $firstname, $lastname, $birthdata, $poza, $gender);
             $db = new Database();
-            $db->registerUser($idUser, $firstname, $lastname, 123, $birthdata, 40, $poza, $gender);
+            $db->registerUser($idUser, $firstname, $lastname, 123, $birthdata, null, $poza, $gender);
             $db->registerCont($idCont, $username, $password_enc, $idUser);
 
             // header("Location: /startPages/SignUpPage");
