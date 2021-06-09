@@ -10,6 +10,8 @@ class Admin extends Controller{
         $user = getLoggedInAdmin();
 
         if ($user) {
+            $db = new Database();
+            $db->updatePrgoramariVizite();
             $view = $this->view('admin/index', array("user"=>$user));
         } else {
             $view = $this->view("startPages/LoginPageAdmin", $data);

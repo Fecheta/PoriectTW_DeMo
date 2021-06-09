@@ -272,6 +272,30 @@
 
         }
 
+        
+        public function updatePrgoramariVizite(){
+            $stmt = $this->conn->prepare("SELECT * FROM programari WHERE (data <= current_date - INTERVAL 2 DAY) AND status=1");
+            $stmt->execute();
+            $resultProg = $stmt->get_result();
+            $stmt->close();
+
+            $status = 0;
+            while($row = $resultProg->fetch_assoc()){
+                $stmt = $this->conn->prepare("INSERT INTO vizite
+                (id_vizita, id_detinut, id_user1, id_user2, id_user3, data, ora, natura_vzitei, relatia_cu_detinutul, status)
+                VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                $stmt->bind_param("iiiiissssi", $row["id_programare"], $row["id_detinut"], $row["id_user1"],
+                                                $row["id_user2"], $row["id_user3"], $row["data"], $row["ora"],
+                                                $row["natura_vzitei"],$row["relatia_cu_detinutul"], $status);
+                $stmt->execute();
+                $stmt->close();
+
+                // $stmt = $this->conn->prepare("DELETE FROM programari WHERE id_programare = ?");
+                // $stmt->bind_param("i", $row["id_programare"]);
+                // $stmt->execute();
+                // $stmt->close();
+            }
+        }
 
 
     }
