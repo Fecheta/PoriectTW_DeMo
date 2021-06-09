@@ -1,7 +1,7 @@
 <?php
 
 include_once __DIR__ . "/../models/auth.util.php";
-require_once __DIR__ . "/../models/database.util.php";
+include_once __DIR__ . "/../models/database.util.php";
 
 class StartPages extends Controller{
 
@@ -17,7 +17,6 @@ class StartPages extends Controller{
     }
 
     public function SignUpPage($data = []){
-        
         $firstname;
         $lastname;
         $username;
@@ -25,48 +24,51 @@ class StartPages extends Controller{
         $birthdata;
         $gender;
         $poza;
-        $idUser;
+        $idUser = 0;
+        $idCont = 0;
 
        
-            if( isset($_POST["firstname"]) && isset($_POST["lastname"]) &&
+        if (isset($_POST["firstname"]) && isset($_POST["lastname"]) &&
                 isset($_POST["password"]) && isset($_POST["birthday"]) &&
-                isset($_POST["gender"]) )
-            {
+                isset($_POST["gender"])) {
 
-             $firstname=$_POST["firstname"];
-             $lastname=$_POST["lastname"];
-             $username = $_POST["username"];
-             $password = $_POST["password"];
-             $password_enc =password_hash($password, PASSWORD_DEFAULT, ["const"=>10]);
+            $idUser = rand(10, 1000);
+            $idCont = rand(1000, 10000);
+            $firstname=$_POST["firstname"];
+            $lastname=$_POST["lastname"];
+            $username = $_POST["username"];
+            $password = $_POST["password"];
+            $password_enc =password_hash($password, PASSWORD_DEFAULT, ["const"=>10]);
 
 
-             $birthdata = $_POST["birthday"];
-             $gender = $_POST["gender"];
+            $birthdata = $_POST["birthday"];
+            $gender = $_POST["gender"];
 
-             $file = $_FILES["poza"];
-             $fileName = $_FILES["poza"]["name"];
-             $tempName = $_FILES["poza"]["tmp_name"];
-             $fileSize = $_FILES["poza"]["size"];
-             $type = $_FILES["poza"]["type"];
-             $error = $_FILES["poza"]["error"];
+            $file = $_FILES["poza"];
+            $fileName = $_FILES["poza"]["name"];
+            $tempName = $_FILES["poza"]["tmp_name"];
+            $fileSize = $_FILES["poza"]["size"];
+            $type = $_FILES["poza"]["type"];
+            $error = $_FILES["poza"]["error"];
 
-             $ext = explode(".", $fileName);
-             $poza = uniqid('', true) . "." . end($ext);
+            $ext = explode(".", $fileName);
+            $poza = uniqid('', true) . "." . end($ext);
 
-             $to = __DIR__ . "/../../public/images/".$poza;
-             move_uploaded_file($tempName, $to);
-
-            $db = new Database();
+            $to = __DIR__ . "/../../public/images/".$poza;
+            move_uploaded_file($tempName, $to);
                 
                   
-                    $idUser =$db->registerVizitator($username, $password_enc);
-                    $db->registerUser($idUser, $firstname, $lastname, $birthdata, $poza, $gender);
-                    $view = $this->view('startPages/SignUpPage', array("id"=>$idUser));
-                   
-                
-            } else {
-                $view = $this->view("startPages/SignUpPage",$data);
-            }
+            // $idUser =$db->registerVizitator($username, $password_enc);
+            // $db->registerUser($idUser, $firstname, $lastname, $birthdata, $poza, $gender);
+            $db = new Database();
+            $db->registerUser($idUser, $firstname, $lastname, 123, $birthdata, 40, $poza, $gender);
+            $db->registerCont($idCont, $username, $password_enc, $idUser);
+
+            // header("Location: /startPages/SignUpPage");
+            $view = $this->view('startPages/SignUpPage', array("id"=>$idUser));
+        } else {
+            $view = $this->view("startPages/SignUpPage", $data);
+        }
     }
 
     public function LoginPageAdmin($data = []){

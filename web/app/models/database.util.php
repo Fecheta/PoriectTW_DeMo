@@ -220,25 +220,19 @@
             $stmt->close();
         }
 
-        public function registerVizitator ($username, $password)
-        {   $id = rand(10, 1000);
-            
-            $stmt = $this->conn->prepare("INSERT INTO cont_vizitator (id_vizitator,username,password,id_user) VALUES( ? , ? , ? , ? )");
-            $stmt->bind_param("issi", $id, $username ,$password, $id);
+        public function registerCont($idCont, $user, $pass, $idUser){
+            $stmt = $this->conn->prepare("INSERT INTO cont_vizitator VALUES( ?, ?, ?, ?)");
+            $stmt->bind_param("issi", $idCont, $user, $pass, $idUser);
             $stmt->execute();
             $stmt->close();
-            return $id;
         }
 
 
-        public function registerUser ($idUser, $firstname, $lastname, $birthdata, $photo, $gen )
-        {   
-            
-            $stmt = $this->conn->prepare("INSERT INTO user (id_user,first_name,last_name,birth_date,photo,gen) VALUES( ? , ? , ? , ? , ? , ? )");
-            $stmt->bind_param("isssss", $idUser, $firstname ,$lastname, $birthdata, $photo, $gen );
+        public function registerUser($id, $fname, $lname, $CNP ,$birth, $varsta ,$photo, $gen ){   
+            $stmt = $this->conn->prepare("INSERT INTO user VALUES( ?, ?, ?, ?, ?, ?, ?, ? )");
+            $stmt->bind_param("issisiss", $id, $fname, $lname, $CNP, $birth, $varsta, $photo, $gen);
             $stmt->execute();
             $stmt->close();
-            
         }
 
 
