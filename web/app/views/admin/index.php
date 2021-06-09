@@ -8,7 +8,7 @@
     <title>ADMIN</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/public/css/admin/index.css">
-    <script type="text/javascript" src="/public/javaScript/topnav.js"></script>
+    <script src="/public/javaScript/topnav.js"></script>
 </head>
 
 <body class="st">
@@ -30,7 +30,9 @@
             <a href="javascript:void(0);" class="icon" onclick="Func()">
                 <i class="fa fa-bars"></i>
             </a>
-            <a id="user" href="#account" class="logged" onclick="AccShow(this.id)">Nume User</a>
+            <?php
+                echo "<a id=\"user\" href=\"#account\" class=\"logged\" onclick=\"AccShow(this.id)\">" . $data["user"]->name . "</a>";
+            ?>
             <div id="userManage" class="extra">
                 <a id="logout" href="/auth/adminLogout">Schimba cont</a>
                 <a id="modify" href="#change_account_data">Modifica cont</a>

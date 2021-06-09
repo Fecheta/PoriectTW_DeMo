@@ -21,7 +21,7 @@
             <a id="verifica" href="/vizitator/cauta">Cauta Detinut</a>
             <a id="about" href="/vizitator/despre">Despre</a>
             <div id="userManagePhone" class="extraResponsive">
-                <a id="logoutP" href="../../StartPage/html/p1.html">Schimba cont</a>
+                <a id="logoutP" href="/auth/logout">Schimba cont</a>
                 <a id="modifyP" href="#change_account_data">Modifica cont</a>
                 <a id="removeP" href="#del_account">Sterge Cont</a>
             </div>
@@ -42,6 +42,11 @@
     </div>
 
  <?php 
+
+if(count($data["programari"]) == 0 && count($data["vizite"]) == 0){
+    echo "<h1> Nu aveti programari sau vizite efectuate </h1>";
+    return;
+}
 
 foreach ($data["programari"] as $s) {
     // <div class=\"edit\">
@@ -375,10 +380,6 @@ foreach ($data["vizite"] as $s) {
 
     echo "</div>";
 }
-
-    echo count($data["programari"]);
-    echo count($data["vizite"]);
-
 ?>
 
 </body>

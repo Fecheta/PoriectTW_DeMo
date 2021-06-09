@@ -72,7 +72,7 @@
         </div>
 
         <div class="subpunct">
-        <h2> 2.1 Structura aplicatiei</h2>
+            <h2> 2.1 Structura aplicatiei</h2>
             <img src="/../../public/images/UML.png" alt="UML">
             <p>
                 poezie;

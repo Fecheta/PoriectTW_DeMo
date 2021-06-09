@@ -34,8 +34,8 @@ class Vizitator extends Controller{
             $user2;
             $user3;
 
-            $resultProg;
-            $resultVis;
+            $resultProg = array();
+            $resultVis = array();
 
             while($row = $programare->fetch_assoc()){
                 $detinut = $db->findDetinutById($row["id_detinut"]);

@@ -7,8 +7,14 @@ class Admin extends Controller{
    
 
     public function index($data = []){
-        
-        $view = $this->view('admin/index',$data);
+        $user = getLoggedInAdmin();
+
+        if ($user) {
+            $view = $this->view('admin/index', array("user"=>$user));
+        } else {
+            $view = $this->view("startPages/LoginPageAdmin", $data);
+            header("Location: /startPages/LoginPageAdmin");
+        }
     }
 
 
@@ -73,9 +79,9 @@ class Admin extends Controller{
                               $pedeapsaPrimita, $pedeapsaRamasa,
                               $dataCondamnarii, $poza, $gen);
 
-                $view = $this->view('admin/AdaugaDetinut', array("status"=>"inserted", "idDetinut"=>$idDetinut));
+                $view = $this->view('admin/AdaugaDetinut', array("status"=>"inserted", "idDetinut"=>$idDetinut, "user"=>$admin));
             } else {
-                $view = $this->view('admin/AdaugaDetinut', array("status"=>"form"));
+                $view = $this->view('admin/AdaugaDetinut', array("status"=>"form", "user"=>$admin));
             }
         } else {
             $view = $this->view("startPages/LoginPageAdmin", $data);

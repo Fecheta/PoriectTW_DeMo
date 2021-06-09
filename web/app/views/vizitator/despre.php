@@ -22,7 +22,7 @@
             <a id="verifica" href="/vizitator/cauta">Cauta Detinut</a>
             <a id="about" href="/vizitator/despre" class="activate">Despre</a>
             <div id="userManagePhone" class="extraResponsive">
-                <a id="logoutP" href="../../StartPage/html/p1.html">Schimba cont</a>
+                <a id="logoutP" href="/auth/logout">Schimba cont</a>
                 <a id="modifyP" href="#change_account_data">Modifica cont</a>
                 <a id="removeP" href="#del_account">Sterge Cont</a>
             </div>

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/public/css/admin/index.css">
     <link rel="stylesheet" href="/public/css/vizitator/profil.css">
-    <script type="text/javascript" src="public/javaScript/topnav.js"></script>
+    <script src="/public/javaScript/topnav.js"></script>
     
 </head>
 
@@ -24,7 +24,7 @@
             <a id="verifica" href="/admin/VizualizareDetinuti" class="activate">Vizualizare Detinuti</a>
             <a id="about" href="/admin/AdaugaDetinut">AdaugaDetinut</a>
             <div id="userManagePhone" class="extraResponsive">
-                <a id="logoutP" href="../../StartPage/html/p1.html">Schimba cont</a>
+                <a id="logoutP" href="/auth/adminLogout">Schimba cont</a>
                 <a id="modifyP" href="#change_account_data">Modifica cont</a>
                 <a id="removeP" href="#del_account">Sterge Cont</a>
             </div>
@@ -33,9 +33,11 @@
             <a href="javascript:void(0);" class="icon" onclick="Func()">
                 <i class="fa fa-bars"></i>
             </a>
-            <a id="user" href="#account" class="logged" onclick="AccShow(this.id)">Nume User</a>
+            <?php
+                echo "<a id=\"user\" href=\"#account\" class=\"logged\" onclick=\"AccShow(this.id)\">" . $data["user"]->name . "</a>";
+            ?>
             <div id="userManage" class="extra">
-                <a id="logout" href="../../StartPage/html/p1.html">Schimba cont</a>
+                <a id="logout" href="/auth/adminLogout">Schimba cont</a>
                 <a id="modify" href="#change_account_data">Modifica cont</a>
                 <a id="remove" href="#del_account">Sterge Cont</a>
             </div>
