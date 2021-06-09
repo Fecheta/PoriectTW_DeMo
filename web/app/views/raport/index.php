@@ -8,6 +8,24 @@
     <link rel="icon" href="/public/images/logo.png">
     <link rel="stylesheet" href="/public/css/raport.css">
     <link rel="stylesheet" href="/public/css/vizitator/profil.css">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org/", 
+  "@type": "HowTo", 
+  "name": "Detention Monitoring Tool",
+  "description": "Util la inchisoare",
+  "step": [{
+    "@type": "HowToStep",
+    "text": "Login as Visitator",
+    "url": "http://demo14.herokuapp.com/startPages/LoginPage?"
+  },{
+    "@type": "HowToStep",
+    "text": "Login as Admin",
+    "url": "http://demo14.herokuapp.com/startPages/LoginPageAdmin?"
+  }]    
+}
+</script>
 </head>
 <body class="pagina">
     <div class="bar">
