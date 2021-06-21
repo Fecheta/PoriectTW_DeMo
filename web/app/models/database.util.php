@@ -16,7 +16,7 @@
             }
         }
 
-        public function testSelect(){
+        public function getAllDetinuti(){
             $sql = "SELECT * FROM detinuti";
             $result = mysqli_query($this->conn, $sql);
     
@@ -221,7 +221,7 @@
         }
 
         public function registerCont($idCont, $user, $pass, $idUser){
-            $stmt = $this->conn->prepare("INSERT INTO cont_vizitator VALUES( ?, ?, ?, ?)");
+            $stmt = $this->conn->prepare("INSERT INTO cont_vizitator VALUES( ? , ? , ? , ? )");
             $stmt->bind_param("issi", $idCont, $user, $pass, $idUser);
             $stmt->execute();
             $stmt->close();
@@ -229,14 +229,11 @@
 
 
         public function registerUser($id, $fname, $lname, $CNP ,$birth, $varsta ,$photo, $gen ){   
-            $stmt = $this->conn->prepare("INSERT INTO user VALUES( ?, ?, ?, ?, ?, ?, ?, ? )");
-            $stmt->bind_param("issisiss", $id, $fname, $lname, $CNP, $birth, $varsta, $photo, $gen);
+            $stmt = $this->conn->prepare("INSERT INTO user VALUES( ? , ? , ? , ? , ? , ? , ? , ? )");
+            $stmt->bind_param("issssiss", $id, $fname, $lname, $CNP, $birth, $varsta, $photo, $gen);
             $stmt->execute();
             $stmt->close();
         }
-
-
-
 
         public function getAllUser(){
             $stmt = $this->conn->prepare("SELECT * FROM user");
