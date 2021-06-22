@@ -23,9 +23,7 @@ request.onload = function() {
 request.open("GET", "/admin/detinuti");
 request.send();
 
-// button.onclick = function(){
-//     console.log(responseObject);
-// }
+
 
 search.oninput = function() {
     emptyResult();
@@ -33,7 +31,7 @@ search.oninput = function() {
     var value = this.value.toLowerCase();
     if (value.length <= 0) {
         var notFound = document.createElement('h1');
-        notFound.textContent = "Nu am gasit nici un detinut pentru datele introduse";
+        notFound.textContent = 'Cauta un detinut dupa nume si prenume sau dupa cod';
         resultArea.appendChild(notFound);
         return;
     }
@@ -43,11 +41,9 @@ search.oninput = function() {
             var prenume = detinut.prenume.toLowerCase();
             var id = detinut.id_detinut.toLowerCase();
 
-            if (nume.startsWith(value) || prenume.startsWith(value) || id.startsWith(value) || (nume + ' ' + prenume).startsWith(value)) {
+            if (nume.includes(value) || prenume.includes(value) || id.includes(value) || (nume + ' ' + prenume).includes(value)) {
                 ok++;
-                // console.log(nume);
-                // console.log(prenume);
-                // console.log(id);
+
 
                 createCard(detinut.poza, detinut.nume, detinut.prenume,
                     detinut.id_detinut, detinut.varsta, detinut.infractiune_comisa,
@@ -63,9 +59,7 @@ search.oninput = function() {
 }
 
 function createCard(poza, nume, prenume, id, varsta, infractiune, data, ramas, primit) {
-    // h2 = document.createElement('h2');
-    // h2.textContent = nume + prenume + id;
-    // resultArea.append(h2);
+
 
     var profil = document.createElement('div');
     profil.setAttribute('class', 'profil');

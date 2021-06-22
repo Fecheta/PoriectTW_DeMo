@@ -50,7 +50,37 @@
 </form>
 
 <div class="resultArea" id="resultArea">
-
+<!-- <div class=\"profil\">
+                <div class=\"numePoza\">
+                    <img src=\"/public/images/". $row["poza"] ."\" alt=\"prisoner\" class=\"forImg\">
+                    <div class=\"info\">
+                        <h4>". $row["nume"] . " " . $row["prenume"] ."</h4>
+                        <h5>". " (#". $row["id_detinut"] .")" ."</h5>
+                    </div>
+                </div>
+                <div class=\"pData\">
+                    <div class=\"rawData\">
+                        <p class=\"col1Data\">Varsta: </p>
+                        <p class=\"col2Data\">". $row["varsta"] ." Ani</p>
+                    </div>
+                    <div class=\"rawData\">
+                        <p class=\"col1Data\">Fapta comisa: </p>
+                        <p class=\"col2Data\">".$row["infractiune_comisa"]."</p>
+                    </div>
+                    <div class=\"rawData\">
+                        <p class=\"col1Data\">Data Condamnarii: </p>
+                        <p class=\"col2Data\">". $row["data_condamnarii"] ."</p>
+                    </div>
+                    <div class=\"rawData\">
+                        <p class=\"col1Data\">Pedeapsa ramasa: </p>
+                        <p class=\"col2Data\">". $row["pedeapsa_ramasa"] ." Zile</p>
+                    </div>
+                    <div class=\"rawData\">
+                        <p class=\"col1Data\">Pedeapsa totala: </p>
+                        <p class=\"col2Data\">". $row["pedeapsa_primita"] ." Ani</p>
+                    </div>
+                </div>
+            </div> -->
 
 </div>
 </body>

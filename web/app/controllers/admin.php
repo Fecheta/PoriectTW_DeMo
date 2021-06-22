@@ -242,7 +242,7 @@ public function detinuti(){
         }
 
         echo json_encode($finalResult);
-        // echo json_encode($result);
+        
     } else {
         $view = $this->view("startPages/LoginPage", $data);
         header("Location: /startPages/LoginPage");
