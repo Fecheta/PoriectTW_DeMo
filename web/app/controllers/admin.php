@@ -143,12 +143,12 @@ class Admin extends Controller{
         $user = getLoggedInAdmin();
 
         if ($user) {
-            if(isset($_POST["name_cod"])){
-                $name_cod = $_POST["name_cod"];
-                $db = new Database();
-                $result = $db->selectByNameOrCod($name_cod);
-                $view = $this->view('admin/VizualizareDetinuti', array("user"=>$user, "data"=>$result));
-            }
+            // if(isset($_POST["name_cod"])){
+            //     $name_cod = $_POST["name_cod"];
+            //     $db = new Database();
+            //     $result = $db->selectByNameOrCod($name_cod);
+            //     $view = $this->view('admin/VizualizareDetinuti', array("user"=>$user, "data"=>$result));
+            // }
 
             $view = $this->view('admin/VizualizareDetinuti', array("user"=>$user));
         } else {
@@ -229,6 +229,25 @@ public function IstoricVizite($data = []){
     }
 
 }
+public function detinuti(){
+    $user = getLoggedInAdmin();
+
+    if($user){
+        $db = new Database();
+        $result = $db->getAllDetinuti();
+        $finalResult = array();
+
+        while($row = $result->fetch_assoc()){
+            $finalResult[] = $row;
+        }
+
+        echo json_encode($finalResult);
+        
+    } else {
+        $view = $this->view("startPages/LoginPage", $data);
+        header("Location: /startPages/LoginPage");
+    }
+    }
 }
 
 ?>

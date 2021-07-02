@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/public/css/admin/VizualizareDetinuti.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/public/css/admin/index.css">
-    <link rel="stylesheet" href="/public/css/vizitator/profil.css">
+    <link rel="stylesheet" href="/public/css/admin/profil.css">
     <script src="/public/javaScript/topnav.js"></script>
     
 </head>
@@ -44,17 +44,13 @@
         </div>
     </div>
 
-    <form method="POST" id="find" class="find">
-        <input class="findBy" type="text" placeholder="Introdu Numele intreg sau Codul detinutului" name="name_cod">
-        <button class="findBtn" type="submit"> <i class="fa fa-search"></i> </button>
-    </form>
+    <form method="POST" action="/vizitator/cauta" id="find" class="find">
+    <input autocomplete="off" id="findDet" class="findBy" type="text" placeholder="Introdu Numele intreg sau Codul detinutului" name="name_cod">
+    <button id="btn" class="findBtn" type="submit"> <i class="fa fa-search"></i> </button>
+</form>
 
-    <?php
-if (isset($data["data"])) {
-    if ($data["data"]->num_rows > 0) {
-        while ($row = $data["data"]->fetch_assoc()) {
-            echo "
-            <div class=\"profil\">
+<div class="resultArea" id="resultArea">
+<!-- <div class=\"profil\">
                 <div class=\"numePoza\">
                     <img src=\"/public/images/". $row["poza"] ."\" alt=\"prisoner\" class=\"forImg\">
                     <div class=\"info\">
@@ -84,16 +80,13 @@ if (isset($data["data"])) {
                         <p class=\"col2Data\">". $row["pedeapsa_primita"] ." Ani</p>
                     </div>
                 </div>
-            </div>
-            ";
-        }
-    } else {
-        echo "<h1> Nu exista nici un detinut pentru datele introduse </h1>";
-    }
-} else {
-    echo "<h1> Cauta un detinut dupa nume/prenume sau dupa codul sau! </h1>";
-}
-?>
+            </div> -->
+
+</div>
+</body>
+<script src="\public\javaScript\search-detinut.js"></script>
+
+
 
 </body>
 </html>

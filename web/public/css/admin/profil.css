@@ -54,10 +54,17 @@ body {
     margin: unset;
 }
 
+.resultArea {
+    /* border: 1px solid black; */
+    width: 40%;
+    margin-top: 2em;
+    margin-bottom: 5em;
+}
+
 .profil {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    width: 40%;
+    width: 100%;
     display: inline-flex;
     margin: 1em 0;
     background-color: rgba(245, 222, 179, 1);
@@ -124,9 +131,8 @@ body {
 }
 
 @media screen and (max-width: 800px) {
-    .profil {
+    .resultArea {
         width: 95%;
-        /* overflow: hidden; */
     }
     /* .profil .forImg .info{
         height: 20%;
