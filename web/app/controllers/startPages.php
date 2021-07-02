@@ -21,7 +21,9 @@ class StartPages extends Controller{
         $lastname;
         $username;
         $password;
+        $CNP = "asdfsf";
         $birthdata;
+        $varsta = 30;
         $gender;
         $poza;
         $idUser = 0;
@@ -61,7 +63,7 @@ class StartPages extends Controller{
             // $idUser =$db->registerVizitator($username, $password_enc);
             // $db->registerUser($idUser, $firstname, $lastname, $birthdata, $poza, $gender);
             $db = new Database();
-            $db->registerUser($idUser, $firstname, $lastname, 123, $birthdata, null, $poza, $gender);
+            $db->registerUser($idUser, $firstname, $lastname, $CNP, $birthdata, $varsta, $poza, $gender);
             $db->registerCont($idCont, $username, $password_enc, $idUser);
 
             // header("Location: /startPages/SignUpPage");

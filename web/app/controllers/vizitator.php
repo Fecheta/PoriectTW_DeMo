@@ -131,6 +131,26 @@ class Vizitator extends Controller{
             header("Location: /startPages/LoginPage");
         }
     }
+
+    public function detinuti(){
+        $user = getLoggedInUser();
+
+        if($user){
+            $db = new Database();
+            $result = $db->getAllDetinuti();
+            $finalResult = array();
+
+            while($row = $result->fetch_assoc()){
+                $finalResult[] = $row;
+            }
+
+            echo json_encode($finalResult);
+            // echo json_encode($result);
+        } else {
+            $view = $this->view("startPages/LoginPage", $data);
+            header("Location: /startPages/LoginPage");
+        }
+    }
 }
 
 ?>

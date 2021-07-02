@@ -44,83 +44,58 @@
     </div>
 
 <form method="POST" action="/vizitator/cauta" id="find" class="find">
-    <input class="findBy" type="text" placeholder="Introdu Numele intreg sau Codul detinutului" name="name_cod">
-    <button class="findBtn" type="submit"> <i class="fa fa-search"></i> </button>
+    <input autocomplete="off" id="findDet" class="findBy" type="text" placeholder="Introdu Numele intreg sau Codul detinutului" name="name_cod">
+    <button id="btn" class="findBtn" type="submit"> <i class="fa fa-search"></i> </button>
 </form>
 
+<div class="resultArea" id="resultArea">
 
 <?php
-if (isset($data["data"])) {
-    if ($data["data"]->num_rows > 0) {
-        while ($row = $data["data"]->fetch_assoc()) {
-            echo "
-            <div class=\"profil\">
-                <div class=\"numePoza\">
-                    <img src=\"/public/images/". $row["poza"] ."\" alt=\"prisoner\" class=\"forImg\">
-                    <div class=\"info\">
-                        <h4>". $row["nume"] . " " . $row["prenume"] ."</h4>
-                        <h5>". " (#". $row["id_detinut"] .")" ."</h5>
-                    </div>
-                </div>
-                <div class=\"pData\">
-                    <div class=\"rawData\">
-                        <p class=\"col1Data\">Varsta: </p>
-                        <p class=\"col2Data\">". $row["varsta"] ." Ani</p>
-                    </div>
-                    <div class=\"rawData\">
-                        <p class=\"col1Data\">Fapta comisa: </p>
-                        <p class=\"col2Data\">".$row["infractiune_comisa"]."</p>
-                    </div>
-                    <div class=\"rawData\">
-                        <p class=\"col1Data\">Data Condamnarii: </p>
-                        <p class=\"col2Data\">". $row["data_condamnarii"] ."</p>
-                    </div>
-                    <div class=\"rawData\">
-                        <p class=\"col1Data\">Pedeapsa ramasa: </p>
-                        <p class=\"col2Data\">". $row["pedeapsa_ramasa"] ." Zile</p>
-                    </div>
-                    <div class=\"rawData\">
-                        <p class=\"col1Data\">Pedeapsa totala: </p>
-                        <p class=\"col2Data\">". $row["pedeapsa_primita"] ." Ani</p>
-                    </div>
-                </div>
-            </div>
-            ";
-        }
-    } else {
-        echo "<h1> Nu exista nici un detinut pentru datele introduse </h1>";
-    }
-} else {
-    echo "<h1> Cauta un detinut dupa nume/prenume sau dupa codul sau! </h1>";
-}
+// if (isset($data["data"])) {
+//     if ($data["data"]->num_rows > 0) {
+//         while ($row = $data["data"]->fetch_assoc()) {
+//             echo "
+//             <div class=\"profil\">
+//                 <div class=\"numePoza\">
+//                     <img src=\"/public/images/". $row["poza"] ."\" alt=\"prisoner\" class=\"forImg\">
+//                     <div class=\"info\">
+//                         <h4>". $row["nume"] . " " . $row["prenume"] ."</h4>
+//                         <h5>". " (#". $row["id_detinut"] .")" ."</h5>
+//                     </div>
+//                 </div>
+//                 <div class=\"pData\">
+//                     <div class=\"rawData\">
+//                         <p class=\"col1Data\">Varsta: </p>
+//                         <p class=\"col2Data\">". $row["varsta"] ." Ani</p>
+//                     </div>
+//                     <div class=\"rawData\">
+//                         <p class=\"col1Data\">Fapta comisa: </p>
+//                         <p class=\"col2Data\">".$row["infractiune_comisa"]."</p>
+//                     </div>
+//                     <div class=\"rawData\">
+//                         <p class=\"col1Data\">Data Condamnarii: </p>
+//                         <p class=\"col2Data\">". $row["data_condamnarii"] ."</p>
+//                     </div>
+//                     <div class=\"rawData\">
+//                         <p class=\"col1Data\">Pedeapsa ramasa: </p>
+//                         <p class=\"col2Data\">". $row["pedeapsa_ramasa"] ." Zile</p>
+//                     </div>
+//                     <div class=\"rawData\">
+//                         <p class=\"col1Data\">Pedeapsa totala: </p>
+//                         <p class=\"col2Data\">". $row["pedeapsa_primita"] ." Ani</p>
+//                     </div>
+//                 </div>
+//             </div>
+//             ";
+//         }
+//     } else {
+//         echo "<h1> Nu exista nici un detinut pentru datele introduse </h1>";
+//     }
+// } else {
+//     echo "<h1> Cauta un detinut dupa nume/prenume sau dupa codul sau! </h1>";
+// }
 ?>
-<!-- <form method="POST" class="search" action="/vizitator/profil">
-        <label class="titlu">CAUTA PE CINEVA</label>
-
-        <label class="line">
-            <span> Numele </span>
-            <input type="text" placeholder="Numele de familie">
-        </label>
-
-        <label class="line">
-            <span for="lname">Prenumele</span>
-            <input type="text" placeholder="Prenumele">
-        </label>
-
-        <label class="line">
-            <span>CNP</span>
-            <input type="text" placeholder="Cod numeric personal">
-        </label>
-
-
-        <label class="line">
-            <span> Cod Unic Detinut </span>
-            <input type="number" placeholder="Cod Detinut" name="cod" required>
-        </label>
-
-        <button class="btn" type="submit"> Cauta! </button>
-</form> -->
-<!-- <h3>Apasă pe caută! pentru a ajunge la o pagină cu un model de rezultat</h3> -->
-
+</div>
 </body>
+<script src="\public\javaScript\smart-search.js"></script>
 </html>
