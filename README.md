@@ -22,5 +22,6 @@ Actorii sunt:
 <b>Angajat al penitenciarului (Administrator):</b> O persoana care este angajata la penitenciar si care primeste la angajare un cont de administrator, aceasta persoana trebuie sa verifice programarile facute de vizitatori si sa le accepte sau sa le respinga pe cele care nu au putut fi procesate automat din varii motive.<br>
 
 <h3>Mai Multe Detalii:<h3>
-<h4>Manual Utilizare: https://demo14.herokuapp.com/ManualUtilizare.html<h4
-                                                                           >
+<h4>Manual Utilizare: https://demo14.herokuapp.com/ManualUtilizare.html<h4>
+<h4>Manual Tehnic: https://demo14.herokuapp.com/ManualTehnic.html<h4>
+  
